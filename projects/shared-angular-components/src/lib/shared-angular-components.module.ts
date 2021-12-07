@@ -16,7 +16,7 @@ import { GridModule } from './grid/grid.module';
 import { InputAutocompleteModule } from './input-autocomplete/input-autocomplete.module';
 import { InputFormatModule } from './input-format/input-format.module';
 import { InputModule } from './input/input.module';
-import { sharedAngularComponentsComponent } from './shared-angular-components.component';
+import { SharedAngularComponentsComponent } from './shared-angular-components.component';
 import { ModalModuleLib } from './modal/modal.module';
 import { NgModule } from '@angular/core';
 import { NotificationsModule } from './notifications/notifications.module';
@@ -30,7 +30,7 @@ import { ToastModule } from './toast/toast.module';
 
 @NgModule({
   declarations: [
-    sharedAngularComponentsComponent,
+    SharedAngularComponentsComponent,
     SidemenuComponent
     ],
   imports: [
@@ -60,9 +60,9 @@ import { ToastModule } from './toast/toast.module';
     InputFormatModule,
     DatepickerModule],
   exports: [
-    sharedAngularComponentsComponent,
+    SharedAngularComponentsComponent,
     SidemenuComponent,
     FormErrorComponent,
   ]
 })
-export class sharedAngularComponentsModule { }
+export class SharedAngularComponentsModule { }

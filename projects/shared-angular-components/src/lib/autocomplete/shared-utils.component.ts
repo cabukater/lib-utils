@@ -10,7 +10,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./shared-angular-components-component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class sharedAngularComponentsComponent implements OnInit {
+export class SharedAngularComponentsComponent implements OnInit {
 
   constructor() { }
 
