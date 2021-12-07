@@ -1,0 +1,264 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+button{
+outline:none;
+ & i {
+     margin-top: 2px;
+ }
+}
+.bullet-notify {
+  width: 14px;
+  border-radius: 3px;
+  height: 14px;
+  line-height: 16px;
+  background-color: $danger-negative;
+  text-align: center;
+  top: 6px;
+  color:$light;
+  font-weight:600;
+  position: absolute;
+  margin-left: -5px;
+  font-size: 11px;
+}
+.notify-system {
+  list-style: none;
+  padding: 0;
+  width: 300px;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+}
+ul.notify-system-positive{
+  right: 0;
+}
+ul.notify-system-negative{
+  right: 0;
+}
+p {
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 0;
+  margin-top: 0;
+  .bullet {
+    border-radius: 200px;
+    width: 15px;
+    height: 15px;
+    float: left;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+  .letter {
+    margin-right: 20px;
+    width: 15px;
+    height: 15px;
+    float: left;
+    position: relative;
+  }
+  small {
+    font-size: 10px;
+    font-style: italic;
+  }
+}
+li.read {
+  .letter {
+    &:before {
+      content: "\f658";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-style: normal;
+    }
+  }
+}
+.not-read {
+  .letter {
+    &:before {
+      content: "\f0e0";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-style: normal;
+    }
+  }
+}
+.notify-system {
+ &.positive {
+  list-style: none;
+  padding: 0;
+  width: 300px;
+  position: absolute;
+  z-index: 999;
+  background-color: $light;
+  border: 1px solid $gray;
+  li:nth-child(2n + 0) {
+    background: mix($menu-positive, $light, 5%);
+  }
+  li {
+    cursor: pointer;
+    & :hover {
+      background: mix($menu-positive, $light, 15%);
+      color: mix($menu-positive, $dark, 0.2%);
+    }
+    &.read {
+      p {
+        color: mix($text-not-read-positive, $light, 55%);
+        & .bullet {
+          background-color: mix($bullet-not-read-positive, $light, 43%) !important;
+        }
+        .letter {
+          &:before {
+            color: mix($bullet-not-read-positive, $light, 43%);
+          }
+        }
+      }
+    }
+    &.not-read {
+      p {
+        color: $text-not-read-positive;
+      }
+      .bullet {
+        background-color: $bullet-not-read-positive;
+      }
+      .letter {
+        &:before {
+          color: $bullet-not-read-positive;
+        }
+      }
+    }
+    &.ERROR {
+      p {
+        color: $text-positive;
+      }
+      .bullet {
+        background-color: $danger-positive;
+      }
+      .letter {
+        &:before {
+          color: $danger-positive;
+        }
+      }
+    }
+    &.WARN {
+      p {
+        color: $text-positive;
+      }
+      .bullet {
+        background-color: $warning-positive;
+      }
+      .letter {
+        &:before {
+          color: $warning-positive;
+        }
+      }
+    }
+    &.INFO {
+      p {
+        color: $text-positive;
+      }
+      .bullet {
+        background-color: $info-positive;
+      }
+      .letter {
+        &:before {
+          color: $info-positive;
+        }
+      }
+    }
+  }
+}
+&.negative {
+  background-color: $dark;
+  border: 1px solid $gray;
+  li:nth-child(2n + 0) {
+    background: mix($menu-negative, $dark, 25%);
+  }
+  li {
+    cursor: pointer;
+    & :hover {
+      background: mix($menu-negative, $dark, 15%);
+      color: mix($menu-negative, $light, 0.2%);
+    }
+    &.read {
+      p {
+        color: mix($text-not-read-negative, $dark, 55%);
+        & .bullet {
+          background-color: mix($bullet-not-read-negative, $dark, 43%) !important;
+        }
+        .letter {
+          &:before {
+            color: mix($bullet-not-read-negative, $dark, 43%);
+          }
+        }
+      }
+    }
+    &.not-read {
+      p {
+        color: $text-not-read-negative;
+      }
+      .bullet {
+        background-color: $bullet-not-read-negative;
+      }
+      .letter {
+        &:before {
+          color: $bullet-not-read-negative;
+        }
+      }
+    }
+    &.ERROR {
+      p {
+        color: $text-negative;
+      }
+      .bullet {
+        background-color: $danger-negative;
+      }
+      .letter {
+        &:before {
+          color: $danger-negative;
+        }
+      }
+    }
+    &.WARN {
+      p {
+        color: $text-negative;
+      }
+      .bullet {
+        background-color: $warning-negative;
+      }
+      .letter {
+        &:before {
+          color: $warning-negative;
+        }
+      }
+    }
+    &.INFO {
+      p {
+        color: $text-negative;
+      }
+      .bullet {
+        background-color: $info-negative;
+      }
+      .letter {
+        &:before {
+          color: $info-negative;
+        }
+      }
+    }
+  }
+}
+}
+.nav-link{
+    border: none;
+       &.positive{
+        background:  mix($color-system, $dark, 70%);
+        color: $light;
+    }
+    &.negative{
+        background:  mix($color-system, $dark, 70%);
+        color: $light;
+    }
+}

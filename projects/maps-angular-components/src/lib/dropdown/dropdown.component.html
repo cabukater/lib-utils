@@ -1,0 +1,11 @@
+<div class='item-collection'>
+    <select class="form-control" *ngIf="items!=undefined && items!=null"
+     [(ngModel)]="selectedOption" (change)="changeReference()" >
+        <option *ngFor="let item of items">
+          <shared-item  >{{item.name}}</shared-item>
+        </option>
+     </select>
+      <div *ngIf="items==undefined || items==null">
+        No items
+      </div>
+  </div>

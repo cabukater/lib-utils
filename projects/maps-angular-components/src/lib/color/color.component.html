@@ -1,0 +1,8 @@
+<shared-button [textButton]="'Mudar para  tema escuro'" [size]="'lg'" [type]="'action'"
+ (click)="changeThemeNeg()" [hidden]="theme === 'negative'" [icon]="'fas fa-palette'"> 
+</shared-button>
+<shared-button [textButton]="'Mudar para tema claro'" [size]="'lg'" [icon]="'fas fa-palette'" [type]="'action'"
+ (click)="changeThemePos()" [hidden]="theme === 'positive'"> 
+</shared-button>
+
+

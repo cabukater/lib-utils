@@ -1,0 +1,45 @@
+<div class="modal" tabindex="-1" role="dialog" *ngIf="showDialog" aria-hidden="false" [ngClass]="theme">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" i18n-aria-label="@@close" aria-label="Close"
+          (click)="click('canel')">
+          <i class="far fa-close"></i>
+          <!-- <fa-icon [icon]="icon.close"></fa-icon> -->
+        </button>
+      </div>
+      <div class="modal-body d-flex">
+        <div class="icon-container"
+          [ngClass]="{'text-success': type === 'message', 'text-danger': type === 'error' || type === 'delete'}">
+          <div *ngIf="type === 'delete'">
+            <i class="far fa-alert"></i>
+            <!-- <fa-icon [icon]="icon.alert"></fa-icon> -->
+          </div>
+          <div *ngIf="type === 'error'">
+            <i class="far fa-error"></i>
+            <!-- <fa-icon [icon]="icon.error"></fa-icon> -->
+          </div>
+          <div *ngIf="type === 'message'">
+            <i class="far fa-info"></i>
+            <!-- <fa-icon [icon]="icon.info"></fa-icon> -->
+          </div>
+        </div>
+        <div class="content-container px-3">
+          <p>{{ content }}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <shared-button *ngIf="type === 'error'" [textButton]="'Fechar'" [size]="'md'" [type]="'closed'"
+          (click)="click('ok')"> close
+        </shared-button>
+        <shared-button *ngIf="type === 'message'" [textButton]="'Ok'" [type]="'action'"
+          (click)="click('ok')"> OK
+        </shared-button>
+        <shared-button *ngIf="type === 'delete'" [textButton]="'Deletar'" [size]="'md'" [type]="'remove'"
+          (click)="click('ok')"> Deletar
+        </shared-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+/**/
+@import "./colors.scss";
+.positive {
+  button.btn.action.full {
+    background-color: $color-system;
+    color: $light;
+    &:hover {
+      background-color: mix($color-system, $light, 85%);
+      border: 1px solid;
+      border-color: mix($color-system, $light, 85%);
+      color: $dark;
+    }
+  }
+  button.btn.success.full {
+    background-color: $success-positive;
+    color: $light;
+    &:hover {
+      background-color: $success-positive;
+      border: 1px solid;
+      border-color: mix($success-positive, $light, 85%);
+      color: $dark;
+    }
+  }
+  button.btn.warning.full {
+    background-color: $warning-positive;
+    color: $light;
+    &:hover {
+      background-color: mix($warning-positive, $light, 85%);
+      border: 1px solid;
+      border-color: mix($warning-positive, $light, 85%);
+      color: $dark;
+    }
+  }
+  button.btn.danger.full {
+    background-color: $danger-positive;
+    color: $light;
+    &:hover {
+      background-color: mix($danger-positive, $light, 85%);
+      border: 1px solid;
+      border-color: mix($danger-positive, $light, 85%);
+      color: $dark;
+    }
+  }
+  button.btn.cancel.full {
+    background-color: $cancel;
+    color: mix($light, $dark, 95%);
+    &:hover {
+      background-color: mix($cancel, $light, 85%);
+      border: 1px solid;
+      border-color: mix($cancel, $light, 85%);
+      color: $dark;
+    }
+  }
+  button.btn.transparent.full {
+    background-color: transparent;
+    color: mix($dark, $light, 95%);
+    &:hover {
+      background-color: mix($dark, $light, 55%);
+      border: 1px solid;
+      border-color: mix($dark, $light, 85%);
+      color: $dark;
+    }
+  }
+  //Outline
+  button.btn.action.outline {
+    background-color: transparent;
+    color: $color-system;
+    border: 1px solid;
+    border-color: $color-system;
+    &:hover {
+      background-color: $color-system-secondary;
+      color: $light;
+    }
+  }
+  button.btn.success.outline {
+    background-color: transparent;
+    color: $success-positive;
+    border: 1px solid;
+    border-color: $success-positive;
+    &:hover {
+      background-color: $success-positive;
+      color: $light;
+    }
+  }
+  button.btn.warning.outline {
+    background-color: transparent;
+    color: $warning-positive;
+    border: 1px solid;
+    border-color: $warning-positive;
+    &:hover {
+      background-color: $warning-positive;
+      color: $light;
+    }
+  }
+  button.btn.danger.outline {
+    background-color: transparent;
+    color: $danger-positive;
+    border: 1px solid;
+    border-color: $danger-positive;
+    &:hover {
+      background-color: $danger-positive;
+      color: $light;
+    } 
+  }
+  button.btn.cancel.outline {
+    background-color: $cancel;
+    color: $cancel;
+    border: 1px solid;
+    border-color: $cancel;
+    &:hover {
+      background-color: $danger-positive;
+      color: $light;
+    }
+  }
+  button.btn.transparent.outline {
+    background-color: transparent;
+    color: $cancel;
+    border: 1px solid;
+    border-color: $cancel;
+    &:hover {
+      background-color : mix($dark, $light, 85%);;
+      color: $light;
+    }
+  }
+}  //END BUTTONS STYLE COLORS}

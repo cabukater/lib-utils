@@ -1,0 +1,74 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+.form-control {
+    max-height: 30px;
+    border-radius: 0;
+    font-size: $text-form
+  }
+
+  .control-label{
+    font-size: $text-label;
+  }
+
+.positive{
+  .control-label{
+    color: $text-positive
+  }
+    .form-control:focus,
+    input[type=text][_ngcontent-npx-c4]:focus,
+    input:focus,
+    *:focus{
+    outline: 0,5px solid $color-system !important;
+    border-color: $color-system !important;
+    box-shadow: none !important
+    }
+    .has-error.has-feedback {
+        .form-control {
+          border-left: 3px solid $text-danger-positive;
+        }
+      }
+      .error-msg {
+        color: $text-danger-positive;
+       // background-color: mix($text-danger-positive, $light, 15%);
+        & i {
+          color: $text-waning-positive;
+        }
+      }
+}    
+
+
+.negative{
+  .control-label{
+    color: $text-negative
+  }
+    .form-control:focus,
+    input[type=text][_ngcontent-npx-c4]:focus,
+    input:focus,
+    *:focus{
+    outline: 0,5px solid  mix($color-system, $light, 90%) !important;
+    border-color: mix($color-system, $light, 90%) !important;
+    box-shadow: none !important
+    }
+    
+}    
+
+
+.error-msg{
+  position: relative;
+  top: -13px;
+  padding: 3px 5px 3px 4px;
+}
+
+input.form-control.ng-invalid.ng-touched {
+  border: 1px solid $danger-negative;
+  border-left: 5px solid $danger-negative;
+}
+
+input.form-control.ng-valid.ng-touched.ng-dirty{
+  border-left: 5px solid $color-system;
+}
+
+.form-group.ng-dirty.ng-touched.ng-invalid{
+  border: 0 !important;
+}

@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <header class="jumbotron my-4">
+    <h1 class="display-3"> Validação de campos de formulário</h1>
+    <p class="lead font-italic">Diretiva de exibição de erro de campos de formulário.</p>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2">
+        <div class="card-body">
+          <div class="row top-title mt-4">
+            <div class="col-md-12 m-2 pl-4 pr-4">
+                
+                <h2 class="text-uppercase title  pt-1 pl-4  title-main ">
+                    Componente em funcionamento:
+                </h2>
+                <p class="col-12 ml-2">
+                  Exemplo prático do componente em funcionamento.
+                </p>               
+            </div>
+        </div>
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <form [formGroup]="form" (ngSubmit)="sendInvestidor(form)">
+                <div class="form-group " [ngClass]="displayFieldCss('nome')">
+                  <label class="mb-0  label-control">Nome</label>
+                  <input class="form-control " id="nome" formControlName="nome" required autofocus
+                    [ngClass]="{'input-ok ': form.controls.nome.value  != null }">
+                  <shared-form-error [displayError]="isFieldValid('nome')" errorMsg="Nome é obrigatório.">
+                  </shared-form-error>
+                  <div class="row">
+                    <div class="col-2 offset-lg-10  mt-5">
+                      <button type="submit" [disabled]="!form.valid" class="btn btn-primary float-right">
+                        Cadastrar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card code-box">
+          <div class="row  m-2">
+            <h3 class=" font-italic ml-4">Como Implementar?</h3>
+            <div class="col-md-12 m-2">
+              <p class="font-weight-bolder"> Para inserir validação de campo específico no projeto:</p>
+              <p><code [highlight]="codeInput"></code></p>
+              <hr>
+              <h2 class="title-2">Insira a diretiva abaixo do input</h2>
+              <p><code [highlight]="codeDirective"></code></p>
+            </div>
+          </div>
+          <div class="row  mt-2 m-2">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title-2  pt-1  title-main">
+                Exemplo Completo da implementação (HTML)
+              </h2>
+              <p> <code [highlight]="codeInput"></code></p>
+              <p><code [highlight]="codeDirective"></code>
+            </div>
+          </div>
+        </div>
+        <div class="card code-box mt-2">
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <p class="font-weight-bolder"> Iniciando o formulário:</p>
+              <pre> <code [highlight]="codeForm"></code> </pre>
+              <hr>
+              <p class="font-weight-bolder">Verificando se o formulário é válido:</p>
+              <pre> <code [highlight]="codeValidForm"></code>  </pre>
+              <hr>
+              <p class="font-weight-bolder">Passando qual o formulário inválido:</p>
+              <pre> <code [highlight]="codeValidator"></code>  </pre>
+              <hr>
+              <p class="font-weight-bolder">Indicando o campo inválido e a mensagem:</p>
+              <pre> <code [highlight]="codeDisplayCSS"></code>  </pre>
+            </div>
+          </div>
+        </div>
+        <div class="row  mt-2 m-2">
+          <div class="col-md-12">
+            <h2 class="text-uppercase title-2  pt-1  title-main">
+              Exemplo Completo da implementação (Componente)
+            </h2>
+            <pre> <code [highlight]="codeFull"></code>  </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

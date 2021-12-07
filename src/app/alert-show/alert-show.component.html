@@ -1,0 +1,150 @@
+<div class="container-fluid ">
+  <header class="jumbotron my-4 bg-min-blue">
+    <h1 class="display-3">Alert</h1>
+    <p class="lead font-italic">
+      Janela de alerta com informações e ações ao usuário
+    </p>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2 ">
+        <div class="card-body p-4">
+          <div class="card-body">
+            <div class="row top-title mt-4 pl-4">
+              <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+                Componente em funcionamento
+              </h2>
+              <br />
+              <p class="col-12 ml-2">
+                Exemplo prático do componente em funcionamento.
+              </p>
+            </div>
+            <div class="row  m-2">
+              <div class="col">
+                <p class="font-weight-bold">Alerta de Erro:</p>
+                <p>  Esse alerta indica ao usuário que sua ação  não foi realizada
+                  por  algum erro.</p>
+                <shared-button
+                  [textButton]="'Alerta de erro'"
+                  (click)="openAlertError()"
+                  [type]="'danger'"
+
+                  [size]="'lg'" >
+                </shared-button>
+              </div>
+              <div class="col">
+                <p class="font-weight-bold">Alerta de sucessos:</p>
+                <p>
+                  Esse alerta indica ao usuário que sua ação foi realizada com
+                  sucesso.
+                </p>
+                <shared-button
+                  [textButton]="'Alerta de sucesso'"
+                  (click)="openAlertSuccess()"
+                  [type]="'success'"
+
+                  [size]="'lg'">
+                </shared-button>
+              </div>
+              <div class="col">
+                <p class="font-weight-bold">Alerta de Avisos de Ação:</p>
+                <p>
+                  Esse alerta indica ao usuário a necessidade de confirmar a sua
+                  ação e sua resposta.
+                </p>
+                <shared-button
+                  [textButton]="'Alerta de aviso'"
+                  (click)="openAlertWarning()"
+                  [type]="'warning'"
+                  
+                  [size]="'lg'" >
+                </shared-button>
+              </div>
+              <div class="col">
+                <p class="font-weight-bold">Alerta de Avisos de Ação:</p>
+                <p>
+                  Esse alerta indica ao usuário que sua requisição está em
+                  andamento.
+                </p>
+                <shared-button
+                  [textButton]="'loading'"
+                  (click)="openAlertLoading()"
+                  [type]="'info'"
+                  
+                  [size]="'lg'">
+                </shared-button>
+              </div>
+            </div>
+          </div>
+          <div class="card code-box">
+            <div class="row  m-2">
+              <h3 class=" font-italic ml-4">Como Implementar?</h3>
+              <div class="col-md-12 m-2">
+                <p class="font-weight-bolder">Para utilização do serviço:</p>
+                <p>
+                  Para utilizar é necessário importar o serviço no módulo para
+                  sua completa utilização
+                </p>
+                <pre> <code [highlight]="importModule"></code> </pre>
+                <hr />
+                <h2 class="title-2">instanciando o módulo</h2>
+                <pre><code [highlight]="codeModule"></code></pre>
+              </div>
+            </div>
+            <div class="row  m-2">
+              <div class="col-md-12 m-2">
+                <p class="font-weight-bolder">Para utilização do serviço:</p>
+                <p>
+                  Para utilizar é necessário importar o serviço no componente ou
+                  serviço que irá utilizar
+                </p>
+                <pre> <code [highlight]="importService"></code> </pre>
+                <p>Insira o serviço no construtor</p>
+                <pre><code [highlight]="codeConstructor"></code></pre>
+              </div>
+              <div class="row  mt-2 m-2">
+                <div class="col-md-12">
+                  <h2 class="text-uppercase title-2  pt-1  title-main">
+                    Chamando o Alerta
+                  </h2>
+                  <p>
+                    Os Alertas vem com suas frases pré-determinadas permitindo
+                    assim padronização de textos, sendo necessário somente
+                    chamar o alerta mais adequado para situação.
+                  </p>
+                  <p class="font-weight-bold">
+                    A seguinte sequência mostra a forma de chamar cada tipo de
+                    alerta:
+                  </p>
+                  <h4>Alerta de sucesso</h4>
+                  <pre><code [highlight]="codesuccess"></code></pre>
+                  <h4>Alerta de Erro</h4>
+                  <pre><code [highlight]="codeError"></code></pre>
+                  <h4>Alerta de Confirmação</h4>
+                  <pre><code [highlight]="codeWarning"></code></pre>
+                  <h4>Alerta de Loading</h4>
+                  <p class="text-italic">Loading</p>
+                  <pre><code [highlight]="codeLoading"></code></pre>
+                  <h4>Fechar alerta</h4>
+                  <pre><code [highlight]="codeClose"></code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="row  mt-2 m-2">
+              <div class="col-md-12">
+                <h2 class="text-uppercase title-2  pt-1  title-main">
+                  Exemplo Completo da implementação (Componente)
+                </h2>
+                <p>
+                  Esse Exemplo abaixo é de como se comportaria o arquivo do
+                  Componente.ts
+                </p>
+                <pre> <code [highlight]="codeFull"></code>  </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

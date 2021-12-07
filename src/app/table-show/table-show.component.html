@@ -1,0 +1,101 @@
+<div class="container-fluid ">
+  <header class="jumbotron my-4 bg-min-blue">
+    <h1 class="display-3">Tabelas</h1>
+    <p class="lead font-italic">Use a diretiva de tabela da dados</p>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2 ">
+        <div class="card-body p-4">
+          <div class="row top-title mt-4">
+            <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+              Componente em funcionamento
+            </h2>
+            <br />
+            <p class="col-12 ml-2">
+              Exemplo prático do componente em funcionamento.
+            </p>
+          </div>
+          <div class="row  m-2">
+            <div class="col">
+              <shared-table
+                [tableData]="dataSource.paginationResponse.elementos" 
+                [columnHeader]="columnHeader1"
+                [align]="align" >
+              </shared-table>
+            </div>
+          </div>
+        </div>
+        <div class="card code-box">
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <h3 class=" font-italic ml-4">Como Implementar?</h3>
+              <p> Insira o módulo      </p>
+              <pre> <code [highlight]="codeImport"></code> </pre>
+              <hr />
+              <h2 class="title-2">instanciando o módulo</h2>
+              <pre><code [highlight]="codeModule"></code></pre>
+            </div>
+          </div>
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <p class="font-weight-bolder">Para utilização do serviço:</p>
+              <p>
+                Para utilizar a diretiva insira o HTML referente a diretiva
+                conforme abaixo
+              </p>
+              <pre> <code [highlight]="codeDirectiveHtml"></code> </pre>
+              <p>
+                Importante lembrar que a chave
+                <code [highlight]="htmlHeader"></code>Se refere aos elementos necessários para a
+                 inclusão do cabeçalho da tabela abaixo. Tem um exemplo de como os dados são manipulados
+                  para aparecer somente a coluna desejada e com o nome desejado.
+              </p>
+              
+              <pre> <code [highlight]="codeHeaderTS"></code></pre>
+              <hr />
+              <h2 class="title-2">Exibindo os dados</h2>
+              <p>Para exibir os dados do backend na tabela</p>
+              <pre><code [highlight]="codeDataTable"></code></pre>
+              <p>
+                Use o serviço ou lista em Json para obter os dados como abaixo
+              </p>
+              <pre><code [highlight]="codeGetData"></code></pre>
+            </div>
+          </div>
+          <div class="row  mt-2 m-2">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title-2  pt-1  title-main">
+               alinhando as informações conforme os dados (ex tipo número)
+              </h2>
+              <p>
+                As colunas vêm com os itens alinhados à esquerda, por padrão. Em
+                determinados casos elas precisam de um alinhamento específico (como no caso de números) e 
+                para fazer esse alinhamento é necessário especificar qual o tipo de alinhamento esperado, conforme abaixo:
+              </p>
+
+      
+              <pre> <code [highlight]="codeAlign"></code>  </pre>
+              <p class="font-weight-bold">Note que nesse caso só especifiquei a coluna e o alinhamento desejados, ou seja, 
+                o alinhamento só afeta o item informado.</p>
+              <h4>Alinhamentos possíveis</h4>
+              <p>Essas são as classes de alinhamento de textos possíveis:</p>
+                <p>text-right (itens alinhados à direita)</p>
+                   <p>text-left (itens  alinhados à esquerda ) </p>
+                   <p>text-center (itens alinhados à esquerda)</p>
+            </div>
+          </div>
+          
+          <div class="row  mt-2 m-2">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title-2  pt-1  title-main">
+                Exemplo Completo da implementação (Componente)
+              </h2>
+              <pre> <code [highlight]="codeFullTs"></code>  </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

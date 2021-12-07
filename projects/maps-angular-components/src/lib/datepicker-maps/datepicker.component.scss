@@ -1,0 +1,55 @@
+@import './../assets/colors.scss';
+@import './../assets/negative-color.scss';
+@import './../assets/positive-color.scss';
+@import './../assets/typography.scss';
+
+.form-control {
+    max-height: 30px;
+    border-radius: 0;
+    font-size: $text-form;
+  }
+
+  .control-label{
+    font-size: $text-label;
+  }
+
+
+  .input-group-text{
+      padding:0;
+      background-color: transparent;
+      border: 0 !important;
+  }
+
+  button{
+    height: 30px;
+    line-height: 24px;
+  }
+
+.positive{
+  .control-label{
+    color: $text-positive
+  }
+ .form-control:focus,
+    input[type=text][_ngcontent-npx-c4]:focus,
+    input:focus,
+    *:focus{
+   /* outline: 0,5px solid $color-system !important;
+    border-color: $color-system !important;
+    box-shadow: none !important*/
+    outline: none !important
+    }
+    .has-error.has-feedback {
+        .form-control {
+       //   border-left: 3px solid $text-danger-positive;
+        }
+      }
+      .error-msg {
+      //  color: $text-danger-positive;
+       // background-color: mix($text-danger-positive, $light, 15%);
+        & i {
+          color: $text-waning-positive;
+        }
+      }
+}    
+
+

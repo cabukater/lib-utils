@@ -1,0 +1,18 @@
+<div [ngClass]="theme" class="row">
+  <div class="col-7">
+    <p class="control-label">{{ nameField }}</p>
+  </div>
+  <div class="col-5">
+      <label class="switch">
+        <input
+        type="checkbox"
+        [formControlName]="nameControl"
+        (change)="changed($event)"
+        [checked]="checkbox"
+        [id]="nameControl"
+          formControlName="padrao" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+ </div>
+

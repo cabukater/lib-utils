@@ -1,0 +1,41 @@
+//TEXTS
+$text-label: 13px;
+$text-form: 13px;
+$text-general: 14px;
+$text-link: 13px;
+$text-lg : 20px;
+$text-md: 16px;
+$text-sm: 14px;
+$text-mini: 12px;
+//TITLES
+$title-lg: 42px;
+$title-md: 32px;
+$title-sm:22px;
+//SUBTITLES
+$subtitle-lg: 20px;
+$subtitle-md: 18px;
+$subtitle-sm: 16px;
+//ICONS
+$icon-lg: 25px;
+$icon-md: 22px;
+$icon-sm: 18px;
+$icon-mini: 16px;
+$icon-extra-mini: 14px;
+//WEIGHT
+$text-light:300;
+$text-thin:400;
+$text-medium:500;
+$text-bold:600;
+$text-super-bold:800;
+
+
+
+//Set styles:
+
+.title-secondary{
+  font-size: $subtitle-md ;
+}
+
+.thin{
+    font-weight: $text-thin;
+}

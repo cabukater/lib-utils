@@ -1,0 +1,44 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+
+.error-msg {
+  position: relative;
+  top: -15px;
+  padding: 3px 5px 3px 4px;
+  font-size: $text-mini;
+  max-width: 250px;
+  opacity: 0.9;
+  & i {
+    font-size: $icon-extra-mini;
+  }
+}
+.negative {
+  .has-error.has-feedback {
+    .form-control {
+      border-left: 3px solid $text-danger-negative;
+    }
+  }
+  .error-msg {
+    color: $text-danger-negative;
+    background-color: mix($text-danger-negative, $dark, 10%);
+    & i {
+      color: $text-waning-negative;
+    }
+  }
+}
+  .positive {
+    .has-error.has-feedback {
+      .form-control {
+        border-left: 3px solid $text-danger-positive;
+      }
+    }
+    .error-msg {
+      color: $text-danger-positive;
+      background-color: mix($text-danger-positive, $light, 15%);
+      & i {
+        color: $text-waning-positive;
+      }
+    }
+  }
+

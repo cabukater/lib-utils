@@ -1,0 +1,105 @@
+<div class="container-fluid">
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Autocomplete</h1>
+    <p class="lead font-italic">
+      Utilize esse componente como um input onde o mesmo realiza uma busca
+      interna (via backend) de dados pré gravados ou como select quando existir
+      muitos dados .
+    </p>
+
+    <div class="alert alert-danger p2" style="height: 60px;" role="alert">
+     <small> Atenção  esse componente deprecated utilize prefira utilizar o seguinte componente.</small>
+     <div class="col-3 float-right">
+      <shared-button [type]="'action'" [textButton]="'Autocomplete v2'" ngxClipboard
+      [cbContent]="sizeLg"   [routerLink]="['/auto']"   [size]="''"  [icon]="'far fa-check-circle'" [secondary]="true">
+      </shared-button>
+     </div>
+    
+    </div>
+
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2">
+        <div class="card-body">
+          <div class="row top-title mt-4">
+            <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+              Componente em funcionamento
+            </h2>
+            <br />
+            <p class="col-12 ml-2">
+              Exemplo prático do componente em funcionamento.
+            </p>
+          </div>
+          <div class="row  mt-2">
+            <div class="col-md-12">
+              <div class="control">
+                <input
+                  class="form-control"
+                  placeholder="Search..."
+                  [formControl]="control"
+                  [appAutocomplete]="autocomplete"
+                  [ngModel]="value"
+                />
+              </div>
+              <app-autocomplete #autocomplete="appAutocomplete">
+                <ng-template appAutocompleteContent>
+                  <ng-container *ngIf="items | filter: control.value as result">
+                    <app-option
+                      *ngFor="let option of result"
+                      [value]="option.name"
+                    >
+                      {{ option.name }}
+                    </app-option>
+                    <app-option class="no-result" *ngIf="!result.length"
+                      >No result...</app-option
+                    >
+                  </ng-container>
+                </ng-template>
+              </app-autocomplete>
+            </div>
+          </div>
+        </div>
+        <div class="card code-box">
+          <div class="row  m-2">
+              <h3 class=" font-italic ml-4">Como Implementar?</h3>
+              <div class="col-md-12 m-2">
+                <p> Insira o módulo      </p>
+                <pre> <code [highlight]="importModule"></code> </pre>
+                <hr />
+                <h2 class="title-2">instanciando o módulo:</h2>
+                <pre><code [highlight]="codeModule"></code></pre>
+             </div>
+          </div>
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <h3 class=" font-italic">Implementando HTML</h3>
+              <pre> <code [highlight]="codeInput"></code> </pre>
+              <h2 class="title-2">
+                Insira a diretiva abaixo do input para implementação
+              </h2>
+              <pre><code [highlight]="codeAutoComplete"></code></pre>
+
+            </div>
+            <div class="row  mt-2 m-2">
+              <div class="col-md-12">
+                <h2 class="text-uppercase title-2  pt-1  title-main">
+                  Exemplo Completo da implementação (HTML)
+                </h2>
+                <pre><code [highlight]="codeFull"></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="row  mt-2 m-2">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title-2  pt-1  title-main">
+                Exemplo Completo da implementação (Componente)
+              </h2>
+              <pre> <code [highlight]="codeComponentFull"></code>  </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

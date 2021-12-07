@@ -1,0 +1,103 @@
+/**/
+@import "./colors.scss";
+
+
+@import "./positions.scss";
+:root {
+  --foo: 1;
+}
+.negative {
+  nav {
+    background-color: $header-negative;
+  }
+
+  .stage {
+    background-color: $bg-negative;
+  }
+  .container {
+    background-color: $bg-negative !important;
+    .title {
+      color: $title-negative;
+    }
+
+    .title-main {
+      color: $color-system;
+    }
+
+    .title-secondary {
+      color: $light;
+    }
+    .combo,
+    .jumbotron {
+      background-color: mix($bg-negative, $light, 90%) !important;
+      color: $text-negative;
+    }
+    .card {
+      background-color: mix($bg-negative, $light, 85%) !important;
+      color: $text-negative;
+    }
+    .form-control {
+      background-color: mix($bg-negative, $light, 75%) !important;
+      color: $text-negative;
+    }
+
+    .autocomplete {
+      background-color: mix($bg-negative, $light, 75%) !important;
+      color: $text-negative;
+    }
+  }
+
+  .modal {
+    background-color: $bg-positive !important;
+    opacity: 0.9;
+    color: $text-negative;
+
+    .modal-content {
+      background-color: mix($bg-negative, $light, 95%) !important;
+      opacity: 1;
+    }
+  }
+}
+//Datepicker
+.bs-datepicker.negative.ng-star-inserted {
+  background-color: $bg-negative !important;
+  .bs-datepicker-body {
+    border: 1px solid $bg-negative-secondary !important;
+  }
+  .bs-datepicker-body table td:not(.disabled):not(.week) span:not(.disabled):not(.is-other-month) {
+    color: $text-negative;
+  }
+  th.ng-star-inserted {
+    color: $text-negative !important ;
+    font-weight: 600 !important;
+  }
+
+  .bs-datepicker-head {
+    background-color: $color-system;
+  }
+  .bs-datepicker-body table td.is-highlighted:not(.disabled):not(.selected) span,
+  .bs-datepicker-body table td span.is-highlighted:not(.disabled):not(.selected) {
+    background-color: $color-system;
+    color: $light !important;
+    border-radius: 0 !important;
+  }
+  span.selected {
+    background-color: $color-system;
+    color: $light !important;
+    border-radius: 0 !important;
+  }
+  th.ng-star-inserted:first-child,
+  th.ng-star-inserted:last-child {
+    color: mix($gray, $light, 25%) !important;
+  }
+  .bs-datepicker-body table td span.is-other-month,
+  .bs-datepicker-body table td.is-other-month span {
+    color: mix($bg-negative, $light, 60%) !important;
+  }
+
+
+}
+
+.bs-datepicker.negative.ng-star-inserted{
+  box-shadow: 0 0 10px 0 $color-system !important;
+}

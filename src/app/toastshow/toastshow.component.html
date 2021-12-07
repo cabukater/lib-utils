@@ -1,0 +1,85 @@
+<div class="container-fluid ">
+    <header class="jumbotron my-4 bg-min-blue">
+        <h1 class="display-3"> Toaster
+        </h1>
+        <p class="lead font-italic">Utilize esse componente para exibição de mensagens de backEnd.
+        </p>
+    </header>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3 bg-2 ">
+                <div class="card-body p-4">
+                    <div class="row top-title mt-4">
+                        <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+                          Componente em funcionamento
+                        </h2>
+                        <br />
+                        <p class="col-12 ml-2">
+                          Exemplo prático do componente em funcionamento.
+                        </p>
+                      </div>
+                    <div class="row  m-2">
+                        <div class="col">
+                            <p class="font-weight-bold">Toaster sucesso</p>
+                            <p>Esse Toaster é indicado para ações com resultado de sucesso.</p>
+                            <shared-button [textButton]="'Mostrar toast Success'" 
+                            (click)="showToastsuccess()" [type]="'success'"
+                             [size]="'lg'">
+                        </shared-button>
+                        </div>
+                        <div class="col">
+                            <p class="font-weight-bold">Toaster Informativo:</p>
+                            <p>Esse Toaster é indicado para ações  com resultado informativo.</p>
+                            <shared-button [textButton]="'Mostrar toast Info'" 
+                            (click)="showToastInfo()" [type]="'info'"
+                             [size]="'lg'">
+                        </shared-button>
+                        </div>
+                        <div class="col">
+                            <p class="font-weight-bold">Toaster Error</p>
+                            <p>Esse Toaster é indicado para ações com resultado negativo.</p>
+                            <shared-button [textButton]="'Mostrar toast Error'" 
+                            (click)="showToastWarning()" [type]="'danger'"
+                             [size]="'lg'">
+                        </shared-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card code-box">
+                    <div class="row  m-2">
+                        <h3 class=" font-italic ml-4">Como Implementar?</h3>
+                        <div class="col-md-12 m-2">
+                          <p> Insira o módulo      </p>
+                          <pre> <code [highlight]="importModule"></code> </pre>
+                          <hr />
+                          <h2 class="title-2">instanciando o módulo:</h2>
+                          <pre><code [highlight]="codeModule"></code></pre>
+                       </div>
+                    </div>
+                    <div class="row  m-2">
+                        <div class="col-md-12 m-2">
+                            <p class="font-weight-bolder"> Utilizando o serviço no componente:</p>
+                            <p>Insira a importação desse serviço direto no componente:</p>
+                            <pre> <code [highlight]="codeImport"></code> </pre>
+                            <p>Inclua no construtor:</p>
+                            <pre><code [highlight]="codeService"></code></pre>
+                        </div>
+                        <div class="row  mt-2 m-2">
+                            <div class="col-md-12">
+                                <p>Chamando o Toast </p>
+                                <pre><code [highlight]="codeInput"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row  mt-2 m-2">
+                        <div class="col-md-12">
+                            <h2 class="text-uppercase title-2  pt-1  title-main">
+                                Exemplo Completo da implementação no .ts.
+                            </h2>
+                            <pre> <code [highlight]="codeFull"></code>  </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

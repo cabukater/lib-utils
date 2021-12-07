@@ -1,0 +1,96 @@
+<div class="container-fluid">
+    <header class="jumbotron my-4">
+        <h1 class="display-3"> Componente de Select (DropDown)
+        </h1>
+        <p class="lead font-italic">Utilize esse componente em caso de selects ou dropdown com poucos dados.</p>
+    </header>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3 bg-2 ">
+                <div class="card-body p-4">
+                    <div class="row top-title mt-4">
+                        <div class="col-md-12 m-2 pl-3 pr-4">
+                          <h2 class="text-uppercase title  pt-1 pl-4  title-main ">
+                                Componente em funcionamento:
+                            </h2>
+                            <p class="col-12 ml-2">
+                              Exemplo prático do componente em funcionamento.
+                            </p>               
+                        </div>
+                    </div>
+                    <div class="row pl-4 pr-4">
+                        <div class="col-md-12 mt-2" [formGroup]="form">
+                            <shared-dropdown [items]="items" [selectedOption]="selectedOption"
+                                (selectValue)="changeOption($event)" name="inputName">
+                            </shared-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="card code-box pl-4 pr-4">
+                    <div class="row  m-2">
+                        <h3 class=" font-italic ml-4">Como Implementar?</h3>
+                        <div class="col-md-12 m-2">
+                          <p> Insira o módulo      </p>
+                          <pre> <code [highlight]="codeImportModule"></code> </pre>
+                          <hr/>
+                          <h2 class="title-2">instanciando o módulo:</h2>
+                          <pre><code [highlight]="codeModule"></code></pre>
+                       </div>
+                    </div>
+                    <div class="row  m-2">
+                       <div class="col-md-12 m-2">
+                            <p class="font-weight-bolder"> Para inserir o componente de dropdown no HTML:</p>
+                            <pre> <code [highlight]="codeInput"></code> </pre>
+                            <hr>
+                            <p>Não esqueça de inserir o componente dentro do formGroup.</p>
+                            <pre><code [highlight]="codeFormGroup"></code></pre>
+                        </div>
+                        <div class="row  mt-2 m-2">
+                            <div class="col-md-12">
+                                <h2 class="text-uppercase title-2  pt-1  title-main">
+                                    Exemplo Completo da implementação (HTML)
+                                </h2>
+                                <p>O exemplo abaixo demonstra como foi implementado o componente dentro da estrutura HTML.</p>
+                                <pre><code [highlight]="codeHtml"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card code-box mt-2">
+                        <div class="row  m-2">
+                            <div class="col-md-12 m-2">
+                                 <p class="font-weight-bolder">Importe no componente:</p>
+                                <pre> <code [highlight]="addictedModules"></code>  </pre>
+                                <p class="font-weight-bolder">Recebendo Lista de itens a exibir : </p>
+                                <pre> <code [highlight]="listShowCode"></code>  </pre>
+                                <hr>
+                                <p class="font-weight-bolder">Iniciando o formulário:</p>
+                                <pre> <code [highlight]="codeControl "></code>  </pre>
+                                <hr>
+                                <p class="font-weight-bolder">Selecionando o item: <br>
+                                    <span class="font-weight-light">
+                                        Insira a função abaixo  para setar o valor do componente ao input do
+                                        formulário:
+                                    </span></p>
+                                <pre> <code [highlight]="codeSelect "></code>  </pre>
+                                <p>
+                                    <span class="font-weight-bolder"> PS:</span> Não se esqueça de iniciar o formulário
+                                    no ngInit.
+                                </p>
+                                <pre> <code [highlight]="startCode"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row  mt-2 m-2">
+                        <div class="col-md-12">
+                            <h2 class="text-uppercase title-2  pt-1  title-main">
+                                Exemplo completo de componente.
+                            </h2>
+                            <p>Este exemplo abaixo exibe como é um componente utilizando a diretiva:  </p>
+                            <pre> <code [highlight]="codeFull"></code>  </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

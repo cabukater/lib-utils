@@ -1,0 +1,21 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/shared-angular-components",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "ngx-bootstrap": "ngx-bootstrap",
+      "ngx-bootstrap/datepicker": "ngx-bootstrap/datepicker",
+      "ngx-bootstrap/locale": "ngx-bootstrap/locale",
+      "ngx-bootstrap/chronos": "ngx-bootstrap/chronos",
+      "angular2-text-mask": "angular2-text-mask",
+      "ngx-bootstrap/modal": "ngx-bootstrap/modal",
+      "@fortawesome/angular-fontawesome": "@fortawesome/angular-fontawesome",
+      "@fortawesome/fontawesome-free": "@fortawesome/fontawesome-free",
+      "sweetalert2": "sweetalert2",
+      "ngx-take-until-destroy": "sweetalert2",
+      "ngx-bootstrap/tooltip": "ngx-bootstrap/tooltip",
+      "ngx-bootstrap/pagination": "ngx-bootstrap/pagination"
+    }
+  }
+}

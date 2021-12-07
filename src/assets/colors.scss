@@ -1,0 +1,83 @@
+//CORES DO SISTEMA
+
+/*Aqui você seta as colores utilizadas pelo sistema 
+  Algumas cores se repetem para que seja possivel deixar mais
+  flexivel a modificação de cor de elementos especificos.
+*/
+
+
+
+//color DO SISTEMA
+$color-system: #0066aa;
+$color-system-secondary:#0079be;
+$color-third:#9E9FA5;
+$cancel:gray;
+
+//DEFAULT
+$light: #fff;
+$dark: #000;
+$shadow: #b9b7b7;
+$gray:   #c1c1c1;
+$grayTheme: #575656;//CINZA DPO TEMA
+
+$scrollbar-track: #ccc; //fundo do scroll
+
+//color POSITIVA (DEFAULT)
+$bg-positive: #fff;
+$bg-positive-secondary: #fbfbfb;
+$header-positive:#dcddde;  
+$menu-positive: #005f9f;
+$menu-dropdown-container: #0079be;
+$text-menu-positive:#fbfbfb;
+$title-positive:#58585a;
+$text-positive:#79797B;
+$box-logo-positive: #e7e7e8;
+$user-btn-positive: #58585a;
+$user-btn-text-positive:#fff;
+$btn-search-positive:#58585a;
+$btn-icons-header-positive: #58585a;
+$bullet-not-read-positive: green;
+$text-not-read-positive:#ccc;
+$text-danger-positive: red;
+$text-success-positive: green;
+$text-waning-positive: #ff9105;
+$danger-positive: red;
+$success-positive: green;
+$warning-positive: #ff9105;
+$info-positive: blue;
+
+
+$border-default-positive: #dcddde;
+$footer-positive:#E7E7E8;
+
+//NEGATIVE -System 
+$bg-negative: #000;  
+$bg-negative-secondary: #000;
+$header-negative:#58585a;
+$menu-negative: #dcddde;
+$text-menu-negative:#58585a;
+$title-negative:#dcddde;
+$text-negative:#dcddde;
+$box-logo-negative: #000;
+$user-btn-negative: #dcddde;
+$user-btn-text-negative:#58585a;
+$btn-search-negative:#dcddde;
+$btn-icons-header-negative: #dcddde;
+$bullet-not-read-negative: green;
+$text-not-read-negative:#ccc;
+$text-danger-negative: red;
+$text-success-negative: green;
+$text-waning-negative: #ff9105;
+
+$border-default-negative: #dcddde;
+$footer-negative:#474754;
+$success-negative: green;
+$info-negative: yellow;
+$warning-negative: orange;
+$danger-negative: red;
+
+$btn-pending: #ff9105;
+$btn-included: #3c915e;
+$btn-nincluded: #9e2c20;
+
+

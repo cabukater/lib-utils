@@ -1,0 +1,37 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+.form-control {
+  max-height: 30px;
+  border-radius: 0;
+  font-size: $text-form;
+}
+.control-label {
+  font-size: $text-label;
+}
+.positive {
+  .control-label {
+    color: $text-positive;
+  }
+  .form-control:focus,
+  input[type="text"][_ngcontent-npx-c4]:focus,
+  input:focus,
+  *:focus {
+    outline: 0, 5px solid $color-system !important;
+    border-color: $color-system !important;
+    box-shadow: none !important;
+  }
+}
+.negative {
+  .control-label {
+    color: $text-negative;
+  }
+  .form-control:focus,
+  input[type="text"][_ngcontent-npx-c4]:focus,
+  input:focus,
+  *:focus {
+    outline: 0, 5px solid mix($color-system, $light, 90%) !important;
+    border-color: mix($color-system, $light, 90%) !important;
+    box-shadow: none !important;
+  }
+}

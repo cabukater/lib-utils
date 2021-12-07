@@ -1,0 +1,14 @@
+body{
+    height: 100vh;
+    min-height: 100%;;
+}
+
+.adjust-height {
+    min-height: calc(100vh - 65px) !important;
+  }
+  
+  .logo{
+    max-width: 150px;
+}
+
+

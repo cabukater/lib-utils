@@ -1,0 +1,273 @@
+<div class="container-fluid">
+  <header class="jumbotron my-4 ">
+    <h1 class="display-3">shared Angular components</h1>
+    <p class="lead">
+      Projeto lib de componentes prontos em Angular, documentação para
+      implementação.
+    </p>
+  </header>
+  <div class="row  m-2">
+    <div class="col-md-12 m-2">
+      <h2 class="font-weight-bolder">Início:</h2>
+      <p> Rode o seguinte comando em seu terminal: </p>
+      <pre> <code [highlight]="'npm config set registry  http://mirror.services.shared.intranet/repository/npm/'"></code> </pre>
+      <div class="jumbotron my-2">
+        <p class="font-italic">Esse comando define o Nexus (mirror) como fonte de todos os artefatos e
+          configura o ~/.npmrc</p>
+        <p class="font-italic"> O arquivo package.json vai ganhar uma tag a mais, com o endereço do "registry" que vai
+          usar para fazer o upload do módulo:</p>
+        <div class="alert alert-dark" role="alert">
+
+          <small class="font-weight-bold p-2">PS*: Uma vez feita essa configuração, será preciso estar com a VPN ligada
+            toda a vez que houver necessidade de rodar o comando "npm install", em qualquer projeto que esteja na 
+            máquina configurada.
+          </small>
+        </div>
+      </div>
+      <p> Assim seu projeto estará pronto para receber a lib de componentes</p>
+      <p> na pasta e seu projeto instale a lib:</p>
+      <pre> <code [highlight]="'npm install shared-angular-components'"></code> </pre>
+      <h4>
+        Selecione um componente:
+      </h4>
+    </div>
+  </div>
+  <div class="combo" [ngClass]="theme">
+    <div class="row text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Autocomplete</h4>
+            <p class="card-text">Componente de autocomplete.</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['autocomplete']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Cor do sistema</h4>
+            <p class="card-text">Muda a cor do sistema (dark e light)</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['color-system']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Valida Formulário</h4>
+            <p class="card-text">Validação de Formulário</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['valida-formulario']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Select</h4>
+            <p class="card-text">Componente de Select.</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['dropdown']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Toaster</h4>
+            <p class="card-text">Componente de Toaster.</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['toast']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Alert</h4>
+            <p class="card-text">Componente de Alert.</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['alert']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Modal de Mensagem</h4>
+            <p class="card-text">Componente de modal.</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['modal']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Buttons</h4>
+            <p class="card-text">Botões.</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['buttons']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Inputs</h4>
+            <p class="card-text">Diretiva com inputs pré-definidos</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['inputs']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">CPF CNPJ</h4>
+            <p class="card-text">Diretiva de CPF/CNPJ</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['cpf-cnpj']">
+            </shared-button>
+          </div>
+        </div>
+      </div>  
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Datepicker</h4>
+            <p class="card-text">Diretiva de datepicker</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['datepicker']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Combobox</h4>
+            <p class="card-text">Diretiva de combobox</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['combobox']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Toggle</h4>
+            <p class="card-text">Diretiva de switch/toggle</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['toggle']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Tabela</h4>
+            <p class="card-text">Diretiva de tabela</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['table']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Paginação</h4>
+            <p class="card-text">Diretiva de paginação</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['pagination']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Notifications</h4>
+            <p class="card-text">Diretiva de notificações</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['notifications']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Remove Add Lines</h4>
+            <p class="card-text">Diretiva de adicionar e remover campos</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'"  [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['add-remove']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Grid</h4>
+            <p class="card-text">Componente de Grid</p>
+          </div>
+          <div class="card-footer">
+            <shared-button [textButton]="'Como Implementar'" [type]="'action'"  [icon]="'fas fa-question-circle'" [size]="'md'"
+              [routerLink]="['grid']">
+            </shared-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

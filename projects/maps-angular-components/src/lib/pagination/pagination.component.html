@@ -1,0 +1,14 @@
+<div class="row teste" [ngClass]="theme">
+  <div class="col-xs-12 col-12">
+    <pagination
+    class="pagination-shared"
+      [totalItems]="items*10"
+      [(ngModel)]="currentPage"
+      [maxSize]="9"
+      nextText="próximo"
+      previousText="anterior"
+      [directionLinks]="true"
+      (pageChanged)="pageChanged($event)"
+    ></pagination>
+  </div>
+</div>

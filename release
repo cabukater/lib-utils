@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+UPDATE_TYPE="$1"
+
+if ! [[ "${UPDATE_TYPE}" =~ ^(patch|minor|major)$ ]]; then
+  echo "Usage: ./release (patch|minor|major)"
+  exit 1  
+fi
+
+npm version ${UPDATE_TYPE}
+npm login --registry=http://mirror.services.shared.intranet/repository/npm-shared/
+npm publish
+#git push origin --tags
+

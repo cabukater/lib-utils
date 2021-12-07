@@ -1,0 +1,55 @@
+
+<div class="container-fluid">
+    <header class="jumbotron my-4 bg-min-blue">
+      <h1 class="display-3">Grid</h1>
+      <p class="lead font-italic">
+        Data Grid dinâmico com funcionalidades comuns de usabilidade.
+      </p>
+    </header>
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-3 bg-2 ">
+          <div class="card-body p-4">
+            <div class="card-body">
+              <div class="row top-title mt-4 pl-4">
+                <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+                  Componente em funcionamento
+                </h2>
+                <br />
+                <p class="col-12 ml-2">
+                  Exemplo prático do componente em funcionamento.
+                </p>
+              </div>
+              <div class="row  m-2">                
+                <app-municipio-table style="width: 100%;" (selectionChanged)="municipioSelecionado($event)"></app-municipio-table>
+              </div>
+            </div>
+            <div class="card code-box">
+              <div class="row  m-2">
+                <h3 class=" font-italic ml-4">Como Implementar?</h3>
+                <div class="col-md-12 m-2">
+                  <p class="font-weight-bolder">Para utilização do serviço:</p>
+                  <p>
+                    Inicialmente é necessário criar as classes Model implementando a interface IModel disponibilizada pelo componente 
+                    e também extender a interface IGridPaginateResponse referente ao recurso disponibilizado. 
+                  </p>
+                  <pre> <code [highlight]="codeModel"></code> </pre>
+                  <p>
+                    Em seguida crie a classe Service implementando IGriService. 
+                  </p>
+                  <pre> <code [highlight]="codeService"></code> </pre>
+                  <p>
+                    A partir das classes de Model e service prontas, pode-se criar o componente de grid referente ao recurso:
+                  </p>  
+                  <pre> <code [highlight]="codeGridTS"></code> </pre>
+                  Segue a marcação HTML do componente:
+                  <pre> <code [highlight]="codeGridHTML"></code> </pre>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,95 @@
+<shared-modal type="message" [showDialog]="isOpen" [disableCancel]="true" [title]="title" [content]="content" (dialogChange)="close()">
+</shared-modal>
+
+<div class="container-fluid ">
+    <header class="jumbotron my-4 bg-min-blue">
+        <h1 class="display-3"> Modal
+        </h1>
+        <p class="lead font-italic">Componente de modal para inclusão de textos, tabelas, e conteúdos diversos.</p>
+    </header>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3 bg-2 ">
+                <div class="card-body p-4">
+                    <div class="row top-title mt-4">
+                        <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+                          Componente em funcionamento
+                        </h2>
+                        <br />
+                        <p class="col-12 ml-2">
+                          Exemplo prático do componente em funcionamento.
+                        </p>
+                      </div>
+                    <div class="row  m-2">
+                        <div class="col">
+                                 <shared-button
+                            [textButton]="'Exibir modal'"
+                            (click)="open()"
+                            [type]="'add'"
+                            
+                            [size]="'lg'">
+                          </shared-button>
+                        </div>
+                        <div class="col">
+                            <shared-button
+                            [textButton]="'Exibir modal2'"
+                            (click)="open2()"
+                            [type]="'add'"
+                            
+                            [size]="'lg'">
+                          </shared-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card code-box">
+                    <div class="row  m-2">
+
+                            <div class="col-md-12 m-2">
+                                <h3 class=" font-italic ml-4">Como Implementar?</h3>
+                            <p>Insira o módulo no appModule ou no módulo utilizado no componente:</p>
+                            <pre> <code [highlight]="importModule"></code> </pre>
+                             <p >Instanciando o módulo</p>
+                             <pre><code [highlight]="codeModule"></code></pre>
+                        </div>
+                    </div>
+                    <div class="row  m-2">
+                        <div class="col-md-12 m-2">
+                            <p class="font-weight-bolder"> Para utilização da diretiva:</p>
+                            <p>Inclua a diretiva diretamente no html em que será exibido</p>
+                            <pre> <code [highlight]="codeInsert"></code> </pre>
+                           <p class="font-weight-bold">Nesse caso será necessário instanciar algumas variáveis para o componente utilizar:</p>
+                            <pre><code [highlight]="codeVar"></code></pre>
+                        </div>
+                        <div class="row  mt-2 m-2">
+                            <div class="col-md-12">
+                                <h2 class="text-uppercase title-2  pt-1  title-main">
+                                  Chamar o serviço do modal
+                                </h2>
+                                <pre><code [highlight]="codeCall"></code></pre>
+                            </div>
+                        </div>
+                        <div class="row  mt-2 m-2">
+                            <div class="col-md-12">
+                                <h2 class="text-uppercase title-2  pt-1  title-main">
+                                    Fechando o modal
+                                </h2>
+                                <p> As vezes será necessário incluir algum botão para solictar o fechamento do Modal ou simplesmente 
+                                    fecharmos o modal após alguma ação para isso é so seguir o exemplo abaixo:
+                                </p>
+                                <pre><code [highlight]="closeModal"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row  mt-2 m-2">
+                        <div class="col-md-12">
+                            <h2 class="text-uppercase title-2  pt-1  title-main">
+                                Exemplo Completo da implementação (Componente)
+                            </h2>
+                            <p>Esse exemplo abaixo mostra como funciona um componente utilizando o serviço de modal:</p>
+                            <pre> <code [highlight]="codeFull"></code>  </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

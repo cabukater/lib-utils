@@ -1,0 +1,126 @@
+<div class="container-fluid">
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Componente de Inputs</h1>
+    <p class="lead font-italic">
+      Diretiva de input , onde gera automaticamente label e estrutura para
+      compor formulários.
+    </p>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2 ">
+        <div class="card-body p-4">
+          <div class="row top-title mt-4">
+            <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+              Componente em funcionamento
+            </h2>
+            <br />
+            <p class="col-12 ml-2">
+              Exemplo prático do componente em funcionamento.
+            </p>
+          </div>
+          <form (ngSubmit)="send(form)" class="w-100">
+            <div class="row  mt-2" [formGroup]="form">
+              <div class="col-md-6">
+                <shared-input
+                  [typeForm]="'text'"
+                  required
+                  [group]="form"
+                  [nameControl]="'nome'"
+                   name="nome"
+                  [nameField]="'Nome'"
+                  ngDefaultControl
+                ></shared-input>
+                <shared-form-error
+                  [displayError]="isFieldValid('nome')"
+                  errorMsg="nome">
+                </shared-form-error>
+              </div>
+              <div class="col-md-6">
+                <shared-input
+                  [typeForm]="'number'"
+                  [nameControl]="'numero'"
+                  [nameField]="'numero'"
+                  [group]="form"
+                  ngDefaultControl
+                ></shared-input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <shared-button
+                  [textButton]="'Enviar'"
+                  [type]="'action'"
+                  [size]="'md'"
+                  type="submit"
+                  [disabled]="!form.valid"
+                  
+                >
+                </shared-button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card code-box">
+          <div class="row  m-2">
+            <h3 class=" font-italic ml-4">Como Implementar?</h3>
+            <div class="col-md-12 m-2">
+              <p> Insira o módulo      </p>
+              <pre> <code [highlight]="codeModule"></code> </pre>
+              <hr/>
+              <h2 class="title-2">instanciando o módulo:</h2>
+              <pre><code [highlight]="codeImport"></code></pre>
+           </div>
+        </div>
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <div class="col-md-12 m-2">
+                <p>O exemplo abaixo reflete a diretiva de forma completa:.</p>
+                <pre> <code [highlight]="codeInput"></code> </pre>
+              </div>
+           </div>
+            <div class="row  m-2">
+              <div class="col-md-12 m-2">
+                <p class="font-weight-bolder">
+                  Para inserir o componente de input:
+                </p>
+                <p>Exemplo completo de input (explicado)</p>
+                <pre> <code [highlight]="codeInput"></code> </pre>
+                <h2 class="title-2">
+                  Não esqueça criar os campos no componente do formGroup
+                </h2>
+                <pre><code [highlight]="codeFormGroup"></code></pre>
+              </div>
+              <div class="col-md-12 m-2">
+                <p class="font-weight-bolder">Para inserir aviso de erro:</p>
+                <p>
+                  Ao inserir required no componente será necessário colocar o
+                  componente de erro para que sinalize o campo que falta
+                  prreenchimento como abaixo.
+                </p>
+                <pre><code [highlight]="codeInputError"></code></pre>
+              </div>
+              <div class="row  mt-2 m-2">
+                <div class="col-md-12">
+                  <h2 class="text-uppercase title-2  pt-1  title-main">
+                    Exemplo Completo da implementação (HTML)
+                  </h2>
+                  <pre><code [highlight]="codeHtml"></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="row  mt-2 m-2">
+              <div class="col-md-12">
+                <h2 class="text-uppercase title-2  pt-1  title-main">
+                  Exemplo Completo da implementação (Componente)
+                </h2>
+                <pre> <code [highlight]="codeComponentFull"></code>  </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

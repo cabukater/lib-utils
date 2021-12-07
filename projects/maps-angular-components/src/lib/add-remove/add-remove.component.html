@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row top-title mt-4">
+    <div _ class="col-11 pr-1 pl-3">
+      <h2 _class="text-uppercase title  pt-1 title-main">{{ TitleBox }}</h2>
+    </div>
+    <div class="col-1">
+      <shared-button
+        [tooltip]="'Adicionar endereço'"
+        [type]="'action'"
+        [icon]="'fas fa-plus'"
+        [posTooltip]="'top'"
+        [size]="'sm'"
+        (click)="createNew($event)" >
+      </shared-button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row p-2 pb-0">
+      <div class="col-12">
+        <h2 class="title-secondary thin  cursor-pointer"  >
+          <span> {{ titleGroup }}</span>
+          <div class="float-right text-capitalize small pattern-info">
+            <i class="far fa-check-circle" [hidden]="patternLogical"></i> Padrão
+          </div>
+        </h2>
+        <hr class="mb-0" />
+      </div>
+    </div>
+    <div div class="form-row pl-3 pr-3">    
+      <ng-content #patternInput >
+
+      </ng-content>
+      <ng-content #formBody>
+      </ng-content>
+
+    </div>
+  </div>
+</div>

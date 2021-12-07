@@ -1,0 +1,16 @@
+
+<div class="form-group" [ngClass]="theme" [formGroup]="group"  [hidden]="typeField != 'cpf-cnpj'">
+    <label [for]="nameControl" class="control-label" [hidden]="!cpfShow">CPF</label>
+    <label [for]="nameControl" class="control-label" [hidden]="!cnpjShow">CNPJ</label>
+    <input type="text"  class="form-control"  [formControlName]="nameControl"  [textMask]="mask()" > 
+</div>
+<div class="form-group" [ngClass]="theme" [formGroup]="group" [hidden]="typeField != 'cpf'">
+    <label [for]="nameControl" class="control-label" >CPF</label>
+    <input type="text"  class="form-control"  
+   [formControlName]="nameControl" [textMask]="{mask: cpfMask}" > 
+</div>
+<div class="form-group" [ngClass]="theme" [formGroup]="group" [hidden]="typeField != 'cnpj'">
+    <label [for]="nameControl" class="control-label">CNPJ</label>
+    <input type="text"  class="form-control"  [formControlName]="nameControl"  
+    [textMask]="{mask: cnpjMask}"> 
+</div>

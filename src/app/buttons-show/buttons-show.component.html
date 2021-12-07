@@ -1,0 +1,296 @@
+<header class="jumbotron my-4">
+    <h1 class="display-3">Botões
+    </h1>
+    <p class="lead font-italic">Botões fundamentais para funcionalidade do sistema com padronização de tamanho cor e
+        ícones. </p>
+</header>
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-3 bg-2">
+            <div class="card-body">
+                <div class="row top-title mt-4">
+                    <div class="col-md-12 m-2 pl-4 pr-4">
+
+                        <h2 class="text-uppercase title  pt-1 pl-4  title-main ">
+                            Componente em funcionamento:
+                        </h2>
+                        <p class="pl-4 pr-4">Exemplo do componente em funcionamento e de seu resultado esperado .</p>
+                        <shared-button class="pl-4 pr-4" [textButton]="'Diretiva de botão'"
+                            [tooltip]="'Eu sou a diretiva de botão'" [type]="'action'" [posTooltip]="'top'"
+                            [size]="'lg'"></shared-button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2 pl-4 pr-4">
+                        <h2 class="text-uppercase">
+                            Tipos de botões
+                        </h2>
+                        <p>Os botões a seguir foram desenhados seguindo padrão visual alinhado aos
+                            produtos shared e, portanto, atendem as mais diversas variações e funções.                    
+                        </p>
+                        <p>Os icones podem ser selecionados no site </p>
+                        <p><a href="https://fontawesome.com/icons?d=gallery" target="_blank">
+                            Aqui</a>   
+                            <small>
+                            Lembre sempre de ver se já não existe o mesmo tipo de botão com outro icone, para não ocorrer inconsistências.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4" #buttons>
+
+                        <h3>Botões tamanho Grande (texto e icones)</h3>
+                        <p> Os ícones devem ser chamados na tag  <code [highlight]="icon"></code> </p>
+                        <p>Botões completo com tamanho grande</p>
+                        <p>Utilize a Tag :<code [highlight]="lgInput"></code>
+                            <shared-button [type]="'success'" [textButton]="'Success'" ngxClipboard [cbContent]="sizeLg"
+                                (click)="alertCopy()" [size]="'lg'" [icon]="'far fa-check-circle'">
+                            </shared-button>
+                            <shared-button [type]="'action'" [textButton]="'Action'" ngxClipboard [cbContent]="sizeLg"
+                                (click)="alertCopy()" [size]="'lg'"  [icon]="'fas fa-location-arrow'" >
+                            </shared-button>
+                            <shared-button [type]="'action'" [textButton]="'action secondary'" ngxClipboard
+                            [cbContent]="sizeLg" (click)="alertCopy()" [size]="'lg'"  [icon]="'far fa-check-circle'" [secondary]="true">
+                            </shared-button>
+                           <shared-button [type]="'warning'" [textButton]="'warning'" ngxClipboard [cbContent]="sizeLg"
+                                (click)="alertCopy()" [size]="'lg'"  [icon]="'fas fa-exclamation-triangle'">
+                            </shared-button>
+                            <shared-button [type]="'danger'" [textButton]="'danger'" ngxClipboard [cbContent]="sizeLg"
+                                (click)="alertCopy()" [size]="'lg'"  [icon]="'fas fa-trash-alt'">
+                            </shared-button>
+                            <shared-button [type]="'cancel'" [textButton]="'cancel'" ngxClipboard
+                            [cbContent]="sizeLg" (click)="alertCopy()" [size]="'lg'"  [icon]="'fas fa-ban'">
+                           </shared-button>
+                            <shared-button [type]="'transparent'" [textButton]="'transparent'" ngxClipboard
+                                [cbContent]="sizeLg" (click)="alertCopy()" [size]="'lg'"  [icon]="'fas fa-clone'">
+                           </shared-button>
+                   
+                        </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <p> Clique no botão desejado para copiar a chave do tipo e tamanho do botão</p>
+                        <p *ngIf="buttonType"> Botão Selecionado lg
+                         <span class="font-weight-bolder">{{buttonType}}</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>Botões tamanho Médio (texto e icones)</h3>
+                        <p>Botões completos com tamanho Médio</p>
+                        <p>Utilize a Tag :<code [highlight]="mdInput"></code>
+                            <shared-button [type]="'copy'" [textButton]="'Copiar chave do tamanho médio'" ngxClipboard
+                                [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'">
+                            </shared-button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <p> Clique no botão desejado para copiar a chave do tipo e tamanho do botão</p>
+                        <shared-button [type]="'success'" [textButton]="'Success'" ngxClipboard [cbContent]="sizeMd"  (click)="alertCopy()" [size]="'md'" [icon]="'far fa-check-circle'">  </shared-button>
+                        <shared-button [type]="'action'" [textButton]="'Action'" ngxClipboard [cbContent]="sizeMd"   (click)="alertCopy()" [size]="'md'"  [icon]="'fas fa-location-arrow'"> </shared-button>
+                       <shared-button [type]="'action'" [textButton]="'action secondary'" ngxClipboard  [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'"  [icon]="'far fa-check-circle'" [secondary]="true"> </shared-button>
+                       <shared-button [type]="'warning'" [textButton]="'warning'" ngxClipboard [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'"  [icon]="'fas fa-exclamation-triangle'"></shared-button>
+                       <shared-button [type]="'danger'" [textButton]="'danger'" ngxClipboard [cbContent]="sizeMd"   (click)="alertCopy()" [size]="'md'"  [icon]="'fas fa-trash-alt'"> </shared-button>
+                        <shared-button [type]="'cancel'" [textButton]="'cancel'" ngxClipboard  [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'"  [icon]="'fas fa-ban'">  </shared-button>
+                       <shared-button [type]="'transparent'" [textButton]="'transparent'" ngxClipboard [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'"  [icon]="'fas fa-clone'"> </shared-button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>Botões tamanho Médio (texto apenas)</h3>
+                        <p>Botões completos somente com texto (neste caso tamanho médio)</p>
+                        <p>Remova a tag: <code [highlight]="showIconInput"></code> </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2">
+                        <p> Clique no botão desejado para copiar a chave do tipo do botão </p>
+                        <p>Neste caso importante que as opções de tamanho (size) sejam apenas "md" e "lg"</p>
+                        <shared-button [type]="'success'" [textButton]="'Success'" ngxClipboard [cbContent]="sizeMd"  (click)="alertCopy()" [size]="'md'">  </shared-button>
+                        <shared-button [type]="'action'" [textButton]="'Action'" ngxClipboard [cbContent]="sizeMd"   (click)="alertCopy()" [size]="'md'" > </shared-button>
+                       <shared-button [type]="'action'" [textButton]="'action secondary'" ngxClipboard  [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'"   [secondary]="true"> </shared-button>
+                       <shared-button [type]="'warning'" [textButton]="'warning'" ngxClipboard [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'" ></shared-button>
+                       <shared-button [type]="'danger'" [textButton]="'danger'" ngxClipboard [cbContent]="sizeMd"   (click)="alertCopy()" [size]="'md'" > </shared-button>
+                        <shared-button [type]="'cancel'" [textButton]="'cancel'" ngxClipboard  [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'">  </shared-button>
+                       <shared-button [type]="'transparent'" [textButton]="'transparent'" ngxClipboard [cbContent]="sizeMd" (click)="alertCopy()" [size]="'md'"> </shared-button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>Botões tamanho Pequeno (icones)</h3>
+                        <p>Remova o texto removendo a tag:</p>
+                        <p> <code [highlight]="textInput"></code></p>
+                        <p>Utilize a Tag :<code [highlight]="sizeSm"></code>
+                            <shared-button [type]="'copy'" [textButton]="'Copiar chave do tamanho pequeno'" ngxClipboard
+                                [cbContent]="sizeSm" (click)="alertCopy()" [size]="'md'">
+                            </shared-button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2">
+                        <p> Clique no botão desejado para copiar a chave do tipo e tamanho do botão</p>
+                        <shared-button [type]="'success'" ngxClipboard [cbContent]="sizeMd"  (click)="alertCopy()" [size]="'sm'" [icon]="'far fa-check-circle'">  </shared-button>
+                        <shared-button [type]="'action'" ngxClipboard [cbContent]="sizeMd"   (click)="alertCopy()" [size]="'sm'"  [icon]="'fas fa-location-arrow'"> </shared-button>
+                       <shared-button [type]="'action'"  ngxClipboard  [cbContent]="sizeMd" (click)="alertCopy()" [size]="'sm'"  [icon]="'far fa-check-circle'" [secondary]="true"> </shared-button>
+                       <shared-button [type]="'warning'"  ngxClipboard [cbContent]="sizeMd" (click)="alertCopy()" [size]="'sm'"  [icon]="'fas fa-exclamation-triangle'"></shared-button>
+                       <shared-button [type]="'danger'"  ngxClipboard [cbContent]="sizeMd"   (click)="alertCopy()" [size]="'sm'"  [icon]="'fas fa-trash-alt'"> </shared-button>
+                        <shared-button [type]="'cancel'" ngxClipboard  [cbContent]="sizeMd" (click)="alertCopy()" [size]="'sm'"  [icon]="'fas fa-ban'">  </shared-button>
+                       <shared-button [type]="'transparent'" ngxClipboard [cbContent]="sizeMd" (click)="alertCopy()" [size]="'sm'"  [icon]="'fas fa-clone'"> </shared-button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>Botões Outline (ícones).</h3>
+                        <p> Os botões estão originalmente com seu background solido se desejar outline inclua a
+                            chave a seguir em sua diretiva: </p>
+                        <p> Pode-se utilizar qualquer tamanho com ou sem texto </p>
+                        <p>Utilize a Tag :<code [highlight]="outlineInput"></code>
+                            <shared-button [type]="'copy'" [textButton]="'Copiar chave outline'" ngxClipboard
+                                [cbContent]="sizeSm" (click)="alertCopy()" [size]="'md'">
+                            </shared-button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2">
+                        <p>Os botões abaixo seguem o modelo de outline aplicado para cada tipo de botão:</p>
+                        <shared-button [type]="'success'" [textButton]="'Success'"  [size]="'lg'"  [outline]="true" [icon]="'far fa-check-circle'">  </shared-button>
+                        <shared-button [type]="'action'" [textButton]="'Action'" [size]="'md'"  [outline]="true"  [icon]="'fas fa-location-arrow'"> </shared-button>
+                       <shared-button [type]="'action'" [textButton]="'action secondary'" [size]="'md'"  [outline]="true"  [secondary]="true"> </shared-button>
+                       <shared-button [type]="'warning'" [size]="'sm'" [outline]="true"  [icon]="'fas fa-exclamation-triangle'"></shared-button>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>botões redondos ou circulares</h3>
+                        <p> Há a piossibilidade de adicionar radius aos botões, permitindo assim alterar </p>
+                        <p> Pode-se utilizar qualquer tamanho com ou sem texto </p>
+                        <p>Utilize as Tag: <code [highlight]="tooltipInput"></code>
+                            <shared-button [type]="'copy'" [textButton]="'Copiar chave do tootltip'" ngxClipboard
+                                [cbContent]="tooltipInput" (click)="alertCopy()" [size]="'md'">
+                            </shared-button>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>Tooltips</h3>
+                        <p> Os botões tem a possibilidade de inserir o toltip com texto apropriado a Ação </p>
+                        <p> Pode-se utilizar qualquer tamanho com ou sem texto </p>
+                        <p>Utilize as Tag: <code [highlight]="tooltipInput"></code>
+                            <shared-button [type]="'copy'" [textButton]="'Copiar chave do tootltip'" ngxClipboard
+                                [cbContent]="tooltipInput" (click)="alertCopy()" [size]="'md'">
+                            </shared-button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2">
+                        <p> Clique no botão desejado para copiar a chave da posição desejada do tooltip</p>
+                        <shared-button [textButton]="'Topo'" ngxClipboard [cbContent]="tooltipInput +' ' + tooltipTop"
+                            (click)="alertCopy()" [tooltip]="'texto do Toltip no topo'" [type]="'warning'"
+                            [posTooltip]="'top'" [size]="'md'"></shared-button>
+                        <shared-button [textButton]="'embaixo'" ngxClipboard [cbContent]="tooltipInput +' ' + tooltipTop"
+                            (click)="alertCopy()" [tooltip]="'texto do Toltip embaixo'" [type]="'action'"
+                            [posTooltip]="'bottom'" [size]="'md'"></shared-button>
+                        <shared-button [textButton]="'Direita'" ngxClipboard
+                            [cbContent]="tooltipInput +' ' + tooltipRight" (click)="alertCopy()"
+                            [tooltip]="'texto do Toltip na direita'" [type]="'success'" [posTooltip]="'right'"
+                            [size]="'md'"></shared-button>
+                        <shared-button [textButton]="'Esquerda'" ngxClipboard
+                            [cbContent]="tooltipInput +' ' + tooltipLeft" (click)="alertCopy()"
+                            [tooltip]="'texto do Toltip  na esqueda'" [type]="'danger'" [posTooltip]="'left'"
+                            [size]="'md'"></shared-button>
+                   
+                   </div>
+                </div>
+                <hr>
+   
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2   pl-4 pr-4">
+                        <h3>Secondary</h3>
+                        <p>Haverão casos em que as cores dos botões serão repetidas na mesma tela, para seguir ordem
+                            de ação foi aplicada a opção de secondary para que seja sinalizada que o botão em questão
+                            faz parte a uma ação secundária da página.</p>
+                        <p> Pode-se utilizar com qualquer botão </p>
+                        <p>Utilize a chave: <code [highlight]="secondaryInput"></code>
+                            <shared-button [type]="'copy'" [textButton]="'Copiar chave do secondary'" ngxClipboard
+                                [cbContent]="secondaryInput" (click)="alertCopy()" [size]="'md'">
+                            </shared-button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row  m-2">
+                    <div class="col-md-12 m-2">
+                        <p> Clique no botão desejado para copiar a chave da posição desejada do tooltip</p>
+                        <shared-button [textButton]="'Esquema 1 sem secondary'" ngxClipboard
+                            [cbContent]="tooltipInput +' ' + tooltipTop" (click)="alertCopy()" [type]="'action'"
+                            [posTooltip]="'top'" [size]="'md'"></shared-button>
+                        <shared-button [textButton]="'Esquema 1 com secondary'" ngxClipboard [cbContent]="secondarInput"
+                            (click)="alertCopy()" [type]="'action'" [size]="'md'" [secondary]="true"></shared-button>
+                        <shared-button [textButton]="'Esquema 2 sem secondary'" ngxClipboard [cbContent]="secondarInput"
+                            (click)="alertCopy()" [tooltip]="'texto do Toltip  na esqueda'" [type]="'danger'"
+                            [posTooltip]="'left'" [size]="'md'"></shared-button>
+                        <shared-button [textButton]="'Esquema 2 com secondary'" ngxClipboard
+                            [cbContent]="tooltipInput +' ' + tooltipBottom" (click)="alertCopy()"
+                            [tooltip]="'texto do Toltip em baixo'" [type]="'danger'" [posTooltip]="'bottom'"
+                            [size]="'md'" [secondary]="true">
+                        </shared-button>
+                    </div>
+                </div>
+                <div class="card code-box mt-3">
+                    <div class="row  m-2">
+                        <h3 class=" font-italic ml-4">Como Implementar?</h3>
+                        <div class="col-md-12 m-2">
+                            <p class="font-weight-bolder"> Para utilização da diretiva:</p>
+                            <p>Para utilizar essa diretiva é necessário apenas instanciar o módulo e usar seu html sendo
+                                necessário setar
+                                no componente a função do click da função mais adequada a ação do botão. </p>
+                            <pre> <code [highlight]="importModule"></code> </pre>
+                            <hr>
+                            <h2 class="title-2">instanciando o módulo:</h2>
+                            <pre><code [highlight]="codeModule"></code></pre>
+                        </div>
+                    </div>
+                    <div class="row  m-2">
+                        <div class="row  mt-2 m-2">
+                            <div class="col-md-12">
+                                <h2 class="text-uppercase title-2  pt-1  title-main">
+                                    Exemplo Completo da implementação(HTML).
+                                </h2>
+                                <pre><code [highlight]="codeHtml"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card code-box mt-2">
+                        <div class="row  m-2">
+                            <div class="col-md-12 m-2">
+                                <p class="font-weight-bolder"> Alterar o tipo do botão:</p>
+                                <pre> <code [highlight]="typeInput"></code> </pre>
+                                <h2>Tipos disponiveis</h2>
+                                <p> Selecione aqui o tipo do botão desejado</p>
+                                <shared-button [textButton]="'Selecionar Tipos'" [type]="'action'"
+                                    (click)="scrollToElement(buttons)">
+                                </shared-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

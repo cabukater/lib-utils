@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <header class="jumbotron my-4">
+        <h1 class="display-3">CPF e CNPJ
+        </h1>
+        <p class="lead font-italic">Diretiva com máscara de CPF e CNPJ .</p>
+        <p>Ao digitar 11 números a máscara gera automaticamente pontuação para CPF e ao digitar 14 é 
+            gerado a pontuação para CNPJ.</p>
+    </header>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3 bg-2">
+                <div class="card-body">
+                    <div class="row top-title mt-4 pl-4">
+                        <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+                          Componente em funcionamento
+                        </h2>
+                        <br />
+                        <p class="col-12 ml-2">
+                          Exemplo prático do componente em funcionamento.
+                        </p>
+                      </div>
+                    <div class="row  m-2">
+                        <div class="col-md-12 m-2">
+                            <h3>Tipo CPF/CNPJ</h3>
+                            <p>Reconhece conforme a quantidade de números e insere a máscara conforme o tipp</p>
+                            <p>Utilize a Tag :<code [highlight]="inputCpfCnpj"></code>
+                                <shared-button [type]="'action'" [textButton]="'Copiar Chave CPF/CNPJ'" ngxClipboard
+                                    [cbContent]="inputCpfCnpj" (click)="alertCopy()"  [size]="'lg'">
+                                </shared-button>
+                            </p>
+                            <form>
+                              <shared-cpf-cnpj  [nameControl]="'cpfCnpj'" [group]="form" [typeField]="'cpf-cnpj'"
+                                ngDefaultControl></shared-cpf-cnpj>
+                               <button (click)="sendForm()">teste</button>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row  m-2">
+                        <div class="col-md-12 m-2">
+                            <h3>Tipo CPF</h3>
+                            <p>Aplica máscara de tipo CPF</p>
+                            <p>Utilize a Tag :<code [highlight]="inputCpf"></code>
+                                <shared-button [type]="'copy'" [textButton]="'Copiar Chave CPF'" ngxClipboard
+                                    [cbContent]="inputCpf" (click)="alertCopy()"  [size]="'lg'">
+                                </shared-button>
+                            </p>
+                            <shared-cpf-cnpj [nameControl]="'cpfCnpj'" [group]="form" [typeField]="'cpf'"
+                                ngDefaultControl></shared-cpf-cnpj>
+                        </div>
+                    </div>
+                    <div class="row  m-2">
+                        <div class="col-md-12 m-2">
+                            <h3>Tipo CNPJ</h3>
+                            <p>Aplica máscara de tipo CNPJ</p>
+                            <p>Utilize a Tag :<code [highlight]="inputCnpj"></code>
+                                <shared-button [type]="'copy'" [textButton]="'Copiar Chave CNPJ'" ngxClipboard
+                                    [cbContent]="inputCnpj" (click)="alertCopy()"  [size]="'lg'">
+                                </shared-button>
+                            </p>
+                            <shared-cpf-cnpj [nameControl]="'cnpj'" [group]="form" [typeField]="'cnpj'" ngDefaultControl>
+                            </shared-cpf-cnpj>
+                        </div>
+                    </div>
+                    <div class="card code-box">
+                        <div class="row  m-2">
+                            <div class="col-md-12 m-2">
+                                <h3 class=" font-italic">Sobre a diretiva</h3>
+                                <p class="font-weight-bolder"> Essa diretiva contem cores padrões para que seja feita a
+                                    alteração de máscara conforme o tipo digitado ou tipo selecionado</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="card code-box mt-2">
+                            <div class="row  m-2">
+                                <h3 class=" font-italic ml-4">Como Implementar?</h3>
+                                <div class="col-md-12 m-2">
+                                    <p class="font-weight-bolder"> Para utilização da diretiva:</p>
+                                    <p>Para utilizar essa diretiva é necessário apenas instanciar o módulo e usar seu
+                                        html sendo          necessário setar
+                                        no componente a função do click da função mais adequada a ação do botão. </p>
+                                    <pre> <code [highlight]="codeModule"></code> </pre>
+                                    <hr>
+                                    <h2 class="title-2">instanciando o módulo</h2>
+                                    <pre><code [highlight]="codeImportModule"></code></pre>
+                                </div>
+                            </div>
+                            <div class="row  m-2">
+                                <div class="col-md-12 m-2">
+                                    <h3 class=" font-italic">Html </h3>
+                                    <p class="font-weight-bolder"> Para inserir a diretiva de CPF CNPJ insira no seu
+                                        HTML dentro do seu formulário:</p>
+                                    <pre> <code [highlight]="codeHtmlCpf"></code> </pre>
+                                    <p>
+                                        Para utilização do componente é necessário que ele esteja dentro de um grupo de formulário
+                                      sendo instaciando na criação do formulário como abaixo
+                                    </p>
+                                    <pre> <code [highlight]="codeFormGroup"></code> </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

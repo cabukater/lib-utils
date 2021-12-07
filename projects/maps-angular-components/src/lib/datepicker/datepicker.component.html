@@ -1,0 +1,13 @@
+<div class="form-group" [ngClass]="theme" [formGroup]="group">
+    <label [for]="nameControl" class="control-label">{{nameField}}</label>
+    <div class="input-group">
+        <input type="text" [formControlName]="nameControl" #datepickerYMD="bsDatepicker" bsDatepicker  [bsValue]="bsValue" [bsConfig]="bsConfig" name="data" id="data" value="bsValue | date: 'dd/MM/yyyy'" (bsValueChange)="onValueChange($event)" class="form-control"  
+        [(ngModel)]="date"> 
+        <div class="input-group-prepend prepend-mini-height datepicker-prep" [ngClass]="theme">
+            <div class="input-group-text">
+                <shared-button [type]="'action'" [icon]="'far fa-calendar-alt'"  [size]="'sm'" (click)="datepickerYMD.toggle()" [attr.aria-expanded]="datepickerYMD.isOpen" type="button">
+                </shared-button>
+            </div>
+        </div>
+    </div>
+</div>

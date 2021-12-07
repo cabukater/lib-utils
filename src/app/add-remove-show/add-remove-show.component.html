@@ -1,0 +1,236 @@
+<div class="container-fluid ">
+  <header class="jumbotron my-4 bg-min-blue">
+    <h1 class="display-3">Adicionar e remover</h1>
+    <p class="lead font-italic">
+      Componente repetidor de blocos de (diversos tipos)
+    </p>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2 ">
+        <div class="card-body p-4">
+          <div class="row top-title mt-4">
+            <h2 class="text-uppercase title  pt-1  title-main ml-2 col-12">
+              Componente em funcionamento
+            </h2>
+            <br />
+            <p class="col-12 ml-2">
+              Exemplo prático do componente em funcionamento.
+            </p>
+          </div>
+          <div class="row  m-2">
+            <div class="col">
+              <form [formGroup]="formAddresses">
+                <shared-add-remove
+                  (createNewInput)="receiverInput($event)"
+                  (showInputs)="receiverShow($event)"
+                  [addressCount]="addressCount"
+                  [visibleData]="visibleData"
+                  [hideValue]="true"
+                  (patternLogical)="logicalPatternRec($event)"
+                >
+                  <div formBody>
+                    <div
+                      formArrayName="addresses"
+                      *ngFor="
+                        let address of getControls(formAddresses, 'addresses');
+                        let addressCount = index
+                      "
+                      class="container"
+                    >
+                      <ng-container [formGroupName]="addressCount">
+                        <div class="row p-2 pb-0">
+                          <div class="col-12">
+                            <h2
+                              (click)="showMoreAddress(addressCount)"
+                              class="title-secondary thin  cursor-pointer"
+                            >
+                              <i
+                                [ngClass]="{
+                                  'fas fa-chevron-right':
+                                    visibleAddress != addressCount,
+                                  'fa fa-chevron-down':
+                                    visibleAddress === addressCount
+                                }"
+                                class="btn-show-hide"
+                              >
+                              </i>
+                              <span [hidden]="!address.get('logradouro').value">
+                                {{ address.get("logradouro").value }}</span
+                              >
+                              <span [hidden]="address.get('logradouro').value">
+                                Novo Endereço</span
+                              >
+                              <div
+                                class="float-right text-capitalize small pattern-info"
+                                *ngIf="selectedAddress === addressCount"
+                              >
+                                <i class="far fa-check-circle"></i> Padrão
+                              </div>
+                            </h2>
+                            <hr
+                              *ngIf="visibleAddress == addressCount"
+                              class="mb-0"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="form-row pl-3 pr-3"
+                          *ngIf="visibleAddress == addressCount"
+                        >
+                          <div
+                            class="card bg-2 toggle-box padrao-box"
+                            [hidden]="selectedAddress === addressCount"
+                          >
+                            <p class="">
+                              Padrão:
+                            </p>
+                            <label class="switch">
+                              <input
+                                type="radio"
+                                (change)="onChange(addressCount, 'padrao')"
+                                name="padrao"
+                                [value]="true"
+                                formControlName="padrao"
+                              />
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <shared-input
+                              [typeForm]="'text'"
+                              required
+                              [nameControl]="'logradouro'"
+                              name="logradouro"
+                              [group]="address"
+                              [nameField]="'logradouro'"
+                              ngDefaultControl
+                            ></shared-input>
+                          </div>
+                          <div class="form-group col-md-1">
+                            <shared-input
+                              [typeForm]="'text'"
+                              required
+                              [nameControl]="'numero'"
+                              name="numero"
+                              [group]="address"
+                              [nameField]="'número'"
+                              ngDefaultControl
+                            ></shared-input>
+                          </div>
+                          <div class="form-group col-md-2 mb-0">
+                            <shared-input
+                              [typeForm]="'text'"
+                              required
+                              [nameControl]="'complemento'"
+                              name="complemento"
+                              [group]="address"
+                              [nameField]="'Complemento'"
+                              ngDefaultControl
+                            ></shared-input>
+                          </div>
+                          <div class="form-group  col-md-3 mb-0">
+                            <shared-input
+                              [typeForm]="'text'"
+                              required
+                              [nameControl]="'bairro'"
+                              name="bairro"
+                              [group]="address"
+                              [nameField]="'Bairro'"
+                              ngDefaultControl
+                            ></shared-input>
+                          </div>
+
+                          <div class="form-group col-md-4 mb-0">
+                            <shared-input
+                              [typeForm]="'text'"
+                              required
+                              [nameControl]="'cep'"
+                              name="cep"
+                              [group]="address"
+                              [nameField]="'CEP'"
+                              ngDefaultControl
+                            ></shared-input>
+                          </div>
+                          <div class="form-group col-md-3 mb-0">
+                            <shared-input
+                              [typeForm]="'text'"
+                              required
+                              [nameControl]="'cidade'"
+                              name="cidade"
+                              [group]="address"
+                              [nameField]="'Cidade'"
+                              ngDefaultControl
+                            ></shared-input>
+                          </div>
+                          <div class="form-group col-md-2 mb-0">
+                            <label class="control-label">Estado</label>
+                            <shared-dropdown
+                              [items]="items"
+                              [selectedOption]="selectedOption"
+                              (selectValue)="changeOption($event, addressCount)"
+                              name="estadoEnum"
+                            >
+                            </shared-dropdown>
+                          </div>
+                          <div class="form-group col-md-1 mt-4 float-right">
+                            <div class="row">
+                              <div class="col-md-12 text-right mt-1">
+                                <shared-button
+                                  class="float-right"
+                                  [tooltip]="'Remover'"
+                                  [posTooltip]="'top'"
+                                  [icon]="'fas fa-trash-alt'"
+                                  [size]="'sm'"
+                                  [type]="'danger'"
+                                  (click)="removeAddress(addressCount)"
+                                >
+                                </shared-button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                  </div>
+                </shared-add-remove>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card code-box">
+          <div class="row  m-2">
+            <h3 class=" font-italic ml-4">Como Implementar?</h3>
+            <div class="col-md-12 m-2">
+              <p class="font-weight-bolder">Para utilização da diretiva :</p>
+              <p>
+                Para utilizar é necessário importar o componente no módulo para
+                sua completa utilização
+              </p>
+              <pre> <code [highlight]="importModule"></code> </pre>
+              <hr />
+              <h2 class="title-2">instanciando o módulo</h2>
+              <pre><code [highlight]="codeImport"></code></pre>
+            </div>
+          </div>
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <p class="font-weight-bolder">Para utilização da diretiva:</p>
+              <p>Inclua a diretiva diretamente no html em que será exibido</p>
+              <pre> <code [highlight]="codeHtml"></code> </pre>
+              <hr />
+            </div>
+          </div>
+          <div class="row  mt-2 m-2">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title-2  pt-1  title-main">
+                Exemplo Completo da implementação (Componente)
+              </h2>
+              <pre> <code [highlight]="codeFull"></code>  </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,445 @@
+<form [formGroup]="formAddresses" [ngClass]="theme">
+  <div class="row top-title mt-4">
+    <div class="col-11 pr-1 pl-3">
+      <h2 class="text-uppercase title  pt-1 title-main">
+        Endereços
+      </h2>
+    </div>
+    <div class="col-1">
+      <button
+        type="button"
+        (click)="addAddress()"
+        class="btn btn-top btn-outline-secondary btn-sm small-action btn-block"
+      >
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <hr class="mt-2 pt-2" />
+    </div>
+  </div>
+  <div
+    formArrayName="addresses"
+    *ngFor="
+      let address of getControls(formAddresses, 'addresses');
+      let addressCount = index
+    "
+    class="container"
+  >
+    <ng-container [formGroupName]="addressCount">
+      <div class="row p-2 pb-0">
+        <div class="col-12">
+          <h2
+            (click)="showMoreAddress(addressCount)"
+            class="title-secondary thin  cursor-pointer "
+          >
+            <i
+              [ngClass]="{
+                'fas fa-chevron-right': visibleAddress != addressCount,
+                'fa fa-chevron-down': visibleAddress === addressCount
+              }"
+              class="btn-show-hide"
+            >
+            </i>
+            <span [hidden]="!address.get('logradouro').value">
+              {{ address.get("logradouro").value }}</span
+            >
+            <span [hidden]="address.get('logradouro').value">
+              Novo Endereço</span
+            >
+            <div
+              class="float-right text-capitalize small pattern-info"
+              *ngIf="selectedAddress === addressCount"
+            >
+              <i class="far fa-check-circle"></i> Padrão
+            </div>
+          </h2>
+          <hr *ngIf="visibleAddress == addressCount" class="mb-0" />
+        </div>
+      </div>
+      <div class="form-row pl-3 pr-3" *ngIf="visibleAddress == addressCount">
+        <div
+          class="card bg-2 toggle-box padrao-box"
+          [hidden]="selectedAddress === addressCount"
+        >
+          <p class="">
+            Padrão:
+          </p>
+          <label class="switch">
+            <input
+              type="radio"
+              (change)="onChange(addressCount, 'padrao')"
+              name="padrao"
+              [value]="true"
+              formControlName="padrao"
+            />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="control-label">Logradouro</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="logradouro"
+            placeholder="Endereço"
+          />
+        </div>
+        <div class="form-group col-md-2">
+          <label class="control-label">Número</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="numero"
+            placeholder="num"
+          />
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          <label class="control-label">Complemento</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="complemento"
+            placeholder="complemento"
+          />
+        </div>
+        <div class="form-group  col-md-3 mb-0">
+          <label class="control-label">Bairro</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="bairro"
+            placeholder="bairro"
+          />
+        </div>
+        <div class="form-group col-md-3 mb-0">
+          <label class="control-label">CEP</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="cep"
+            placeholder="CEP"
+          />
+        </div>
+        <div class="form-group col-md-3 mb-0">
+          <label class="control-label">Cidade</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="cidade"
+            placeholder="cidade"
+          />
+        </div>
+        <div class="form-group col-md-2 mb-0">
+          <label class="control-label">Estado</label>
+          <!--    <select
+              class="form-control"
+              formControlName="estadoEnum"
+              placeholder="India"
+            >
+              <option value="india">India</option>
+              <option value="usa">USA</option>
+              <option value="england">England</option>
+            </select>-->
+          <shared-dropdown
+            [items]="items"
+            [selectedOption]="selectedOption"
+            (selectValue)="changeOption($event)"
+            name="inputName"
+          >
+          </shared-dropdown>
+        </div>
+        <div class="form-group col-md-1 mt-4 float-right">
+          <div class="row">
+            <div class="col-md-12 text-right mt-1">
+              <button
+                type="button"
+                (click)="removeAddress(addressCount)"
+                tooltip="Remover endereço"
+                class="btn btn-outline-danger btn-sm small-action"
+              >
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <div class="form-group col-2">
+      <button (click)="sendAddress($event)">Enviar</button>
+    </div>
+  </div>
+</form>
+<!--Contatos-->
+<form [formGroup]="formContacts" [ngClass]="theme">
+  <div class="row top-title mt-4">
+    <div class="col-11 pr-1 pl-3">
+      <h2 class="text-uppercase title  pt-1 title-main">
+        Contatos
+      </h2>
+    </div>
+    <div class="col-1">
+      <button
+        type="button"
+        (click)="addContact()"
+        class="btn btn-top btn-outline-secondary btn-sm small-action btn-block"
+      >
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <hr class="mt-2 pt-2" />
+    </div>
+  </div>
+  <div
+    formArrayName="contacts"
+    *ngFor="
+      let contact of getControls(formContacts, 'contacts');
+      let contactCount = index
+    "
+    class="container"
+  >
+    <ng-container [formGroupName]="contactCount">
+      <div class="row p-2 pb-0">
+        <div class="col-12">
+          <h2
+            (click)="showMoreContact(contactCount)"
+            class="title-secondary thin  cursor-pointer "
+          >
+            <i
+              [ngClass]="{
+                'fas fa-chevron-right': visibleContact != contactCount,
+                'fa fa-chevron-down': visibleContact === contactCount
+              }"
+              class="btn-show-hide"
+            >
+            </i>
+            <span [hidden]="!contact.get('email').value">
+              {{ contact.get("email").value }}</span
+            >
+            <span [hidden]="contact.get('email').value"> Novo Contato</span>
+            <div
+              class="float-right text-capitalize small pattern-info"
+              *ngIf="selectedContact === contactCount"
+            >
+              <i class="far fa-check-circle"></i> Padrão
+            </div>
+          </h2>
+          <hr *ngIf="visibleContact == contactCount" class="mb-0" />
+        </div>
+      </div>
+      <div class="form-row pl-3 pr-3" *ngIf="visibleContact == contactCount">
+        <div
+          class="card bg-2 toggle-box padrao-box"
+          [hidden]="selectedContact === contactCount" >
+          <p class="">
+            Padrão:
+          </p>
+          <label class="switch">
+            <input
+              type="radio"
+              (change)="onChangeContact(contactCount, 'padrao')"
+              name="padrao"
+              [value]="true"
+              formControlName="padrao"/>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-group col-md-5">
+          <label class="control-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            placeholder="email"
+          />
+        </div>
+        <div class="form-group col-md-2">
+          <label class="control-label">Telefone</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="telefone"
+            placeholder="telefone" />
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          <label class="control-label">Observações</label>
+          <textarea
+            class="form-control"
+            formControlName="obeservacao"
+            placeholder="Observações" >
+            </textarea>
+        </div>
+        <div class="form-group col-md-1 mt-4 float-right">
+          <div class="row">
+            <div class="col-md-12 text-right mt-1">
+              <button
+                type="button"
+                (click)="removeContact(contactCount)"
+                tooltip="Remover contato"
+                class="btn btn-outline-danger btn-sm small-action">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <div class="form-group col-2">
+      <button (click)="sendContact($event)">Enviar</button>
+    </div>
+  </div>
+</form>
+
+<!--Contas-->
+<form [formGroup]="formAccounts" [ngClass]="theme">
+  <div class="row top-title mt-4">
+    <div class="col-11 pr-1 pl-3">
+      <h2 class="text-uppercase title  pt-1 title-main">
+        Contas
+      </h2>
+    </div>
+    <div class="col-1">
+      <button
+        type="button"
+        (click)="addAccount()"
+        class="btn btn-top btn-outline-secondary btn-sm small-action btn-block"
+      >
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <hr class="mt-2 pt-2" />
+    </div>
+  </div>
+  <div
+    formArrayName="accounts"
+    *ngFor="let account of getControls(formAccounts, 'accounts');
+        let accountCount = index"
+    class="container"
+  >
+    <ng-container [formGroupName]="accountCount">
+      <div class="row p-2 pb-0">
+        <div class="col-12">
+          <h2
+            (click)="showMoreAccount(accountCount)"
+            class="title-secondary thin  cursor-pointer " >
+            <i  [ngClass]="{
+                  'fas fa-chevron-right': visibleAccount != accountCount,
+                  'fa fa-chevron-down': visibleAccount === accountCount
+                }"  class="btn-show-hide" >  </i>
+            <span [hidden]="!account.get('banco').value">
+              Banco : {{ account.get("banco").value }}</span
+            >
+            <span [hidden]="!account.get('numero').value">
+              Conta : {{ account.get("numero").value }}</span >
+            <span [hidden]="!account.get('dv').value">
+               - {{ account.get("dv").value }}</span>
+            <span [hidden]="!account.get('agencia').value">
+               Agência: {{ account.get("agencia").value }}</span >
+            <span [hidden]="!account.get('dvAgencia').value">
+                - {{ account.get("dvAgencia").value }}</span >
+            <span  [hidden]="account.get('banco').value ||
+            account.get('banco').value ||
+            account.get('numero').value ||
+            account.get('dv').value ||
+            account.get('agencia').value || 
+            account.get('dvAgencia').value 
+            "> Nova Conta</span>
+            <div  class="float-right text-capitalize small pattern-info"
+              *ngIf="selectedAccount === accountCount" >
+              <i class="far fa-check-circle"></i> Padrão   </div>
+          </h2>
+          <hr *ngIf="visibleAccount == accountCount" class="mb-0" />
+        </div>
+      </div>
+      <div class="form-row pl-3 pr-3" *ngIf="visibleAccount == accountCount">
+        <div class="card bg-2 toggle-box padrao-box"
+          [hidden]="selectedAccount === accountCount" >
+          <p class=""> Padrão:  </p>
+          <label class="switch">
+            <input  type="radio"  (change)="onChangeAccount(accountCount, 'padrao')"
+              name="padrao" [value]="true"  formControlName="padrao" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-group col-md-5">
+          <label class="control-label">Banco</label>
+          <div class="control">
+            <input class="form-control" placeholder="Search..." [formControl]="control"
+            [appAutocomplete]="autocomplete">
+        </div>
+        <app-autocomplete #autocomplete="appAutocomplete">
+          <ng-template appAutocompleteContent>
+            <ng-container *ngIf="(items | filter: control.value) as result">
+              <app-option *ngFor="let option of result" [value]="option.name">
+                {{ option.name }}
+              </app-option>
+              <app-option class="no-result" *ngIf="!result.length">No result...</app-option>
+            </ng-container>
+          </ng-template>
+        </app-autocomplete>
+
+        </div>
+        <div class="form-group col-md-5">
+            <label class="control-label">Numero</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="numero"
+              placeholder="numero"
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <label class="control-label">DV</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="dv"
+              placeholder="dv"
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <label class="control-label">Agencia</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="agencia"
+              placeholder="agencia"
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <label class="control-label">dvAgencia</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="dvAgencia"
+              placeholder="banco"
+            />
+          </div>
+       
+        <div class="form-group col-md-1 mt-4 float-right">
+          <div class="row">
+            <div class="col-md-12 text-right mt-1">
+              <button
+                type="button"
+                (click)="removeAccount(accountCount)"
+                tooltip="Remover conta"
+                class="btn btn-outline-danger btn-sm small-action"
+              >
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <div class="form-group col-2">
+      <button (click)="sendAccount($event)">Enviar</button>
+    </div>
+  </div>
+</form>
+
+
+
+

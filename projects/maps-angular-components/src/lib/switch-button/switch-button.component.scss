@@ -1,0 +1,121 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+
+.row {
+  max-width: 200px;
+}  /* The switch - the box around the slider */
+  .switch {
+    position: absolute;
+    display: inline-block;
+    width: 64px;
+    height: 26px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &::before {
+      content: "NÃO";
+    }
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $gray;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider {
+    &::before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: $light;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    &::after {
+      content: "NÃO";
+      color: #fff;
+      position: absolute;
+      top: 6px;
+      right: 9px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+
+
+  input:checked + .slider:after {
+    content: "SIM";
+    color: #fff;
+    position: absolute;
+    top: 6px;
+    left: 9dpx !important; 
+    font-weight: 600;
+    font-size: 12px;
+    right: 32px;
+  }
+
+
+  input:checked + .slider {
+    background-color: $color-system;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px $color-system;
+    position: absolute;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
+  }
+
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+.padrao-box {
+  float: right;
+  position: absolute;
+  right: 38px;
+  width: 130px;
+  border: none;
+  margin-top: -38px;
+  font-size: $text-label;
+  p {
+    float: left;
+    position: absolute;
+    left: 0;
+  }
+  label {
+    float: right;
+    position: absolute;
+    right: 0;
+  }
+}
+
+
+

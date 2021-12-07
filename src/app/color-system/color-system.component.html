@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Color System
+    </h1>
+    <p class="lead font-italic">Componente que modifica a cor do sistema,
+       utilizado uma vez no sistema   onde seu funcionamento altera todos 
+       os componentes no sistema instalados .</p>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 bg-2">
+        <div class="card-body">
+          <div class="row top-title mt-4">
+            <h2 class="text-uppercase title  pt-1  title-main ml-2">
+              Componente em funcionamento:
+            </h2>
+          </div>
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <shared-color [name]="theme" (themeColor)="selectTheme($event)">
+              </shared-color>
+            </div>
+          </div>
+        </div>
+        <div class="card code-box">
+          <div class="row  m-2">
+            <div class="col-md-12 m-2">
+              <h3 class=" font-italic">Sobre a diretiva</h3>
+              <p class="font-weight-bolder">Essa diretiva contém cores padrões para que seja feita a alteração de cor
+                conforme o tema desejado.</p>
+              <p>Portanto, a utilização dessa diretiva fica condicionada apenas em utilizar variável de tema gerado pelo Localstorage.</p>  <hr>
+            </div>
+          </div>
+          <div class="card code-box mt-2">
+            <div class="row  m-2">
+              <h3 class=" font-italic ml-4">Como Implementar?</h3>
+              <div class="col-md-12 m-2">
+                <p> Insira o módulo      </p>
+                <pre> <code [highlight]="moduleInsert"></code> </pre>
+                <hr />
+                <h2 class="title-2">instanciando o módulo:</h2>
+                <pre><code [highlight]="codeModule"></code></pre>
+             </div>
+          </div>
+            <div class="row  m-2">
+              <div class="col-md-12 m-2">
+                 <p class="font-weight-bolder"> Para inserir a diretiva de cores no HTML:</p>
+                <pre> <code [highlight]="directive"></code> </pre>
+                <p>Deve se chamar a variável de localStorage no appComponent para instanciar no local o tema.</p>
+                <pre><code [highlight]="codeVar"></code></pre>
+                <hr>
+               <p>Não se esqueça de chamar no HTML geral (appComponent) a classe na estrutura do projeto para que a mudança ocorra.</p>
+                <pre> <code [highlight]="showClass"></code> </pre>
+              </div>
+            </div>
+          </div>
+          <div class="row  mt-2 m-2">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title-2  pt-1  title-main">
+                Exemplo Completo da implementação do HTMl <br>
+                <small>chamando a classe na estrutura correta.</small>
+              </h2>
+              <pre> <code [highlight]="htmlFull"></code>  </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

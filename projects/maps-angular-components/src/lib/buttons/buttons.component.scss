@@ -1,0 +1,37 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+@import "./../assets/buttons-positive.scss";
+@import "./../assets/buttons-negative.scss";
+
+
+
+button{
+  width: 100%;
+}
+.btn {
+  font-size: $text-general;
+  border-radius: 0 !important;
+  max-height: 40px;
+}
+.btn-sm {
+  width: 30px;
+  font-size: $icon-extra-mini;
+  height: 30px;
+}
+.secondary {
+  opacity: 0.7;
+}
+
+.action-type {
+  opacity: 1;
+}
+
+.fab{
+   border-radius: 100%;
+}
+
+.round{
+  border-radius: 4px;
+
+}

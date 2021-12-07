@@ -1,0 +1,108 @@
+@import "./../assets/colors.scss";
+@import "./../assets/positions.scss";
+@import "./../assets/typography.scss";
+.drop-toggle {
+  padding: 5px 10px;
+  border-radius: 0px;
+  cursor: pointer;
+  cursor: hand;
+  width: 100%;
+  text-align: left;
+  border: 1px solid;
+}
+.badge {
+  margin: 2px;
+}
+.drop-toggle i {
+  float: right;
+}
+.drop-show {
+  padding: 4px;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  margin-left: 1px;
+  .row-lines {
+	height: 30px;
+	width: 100%;
+    line-height: 30px;
+    span {
+      margin-left: 25px;
+    }
+  }
+}
+input[type=checkbox], input[type=radio] {
+	float: left;
+    margin-top: 9px;
+    position: relative;
+    left: 15px !important;
+    right: 17px !important;
+
+}
+
+.drop-show label {
+  display: block;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.drop-show label span {
+  display: inline-block;
+}
+.positive {
+  .drop-toggle {
+    color: $text-positive;
+  }
+  .drop-show {
+    background-color: mix($bg-positive, $light, 90%) !important;
+  }
+  .drop-toggle.focus,
+  input[type="text"][_ngcontent-npx-c4]:focus,
+  input:focus,
+  *:focus {
+    outline: 0, 5px solid $color-system !important;
+    border-color: $color-system !important;
+    box-shadow: none !important;
+  }
+  .has-error.has-feedback {
+    .form-control {
+      border-left: 3px solid $text-danger-positive;
+    }
+  }
+  .error-msg {
+    color: $text-danger-positive;
+    // background-color: mix($text-danger-positive, $light, 15%);
+    & i {
+      color: $text-waning-positive;
+    }
+  }
+  .badge {
+    background-color: $color-system;
+    color: $light;
+  }
+}
+.negative {
+  .drop-toggle {
+    color: $text-negative;
+  }
+  .drop-show {
+    background-color: mix($bg-negative, $light, 90%) !important;
+  }
+  .form-control:focus,
+  input[type="text"][_ngcontent-npx-c4]:focus,
+  input:focus,
+  *:focus {
+    outline: 0, 5px solid mix($color-system, $light, 90%) !important;
+    border-color: mix($color-system, $light, 90%) !important;
+    box-shadow: none !important;
+  }
+  .badge {
+    background-color: $color-system;
+    color: $light;
+  }
+}
+
+
+.drop-show[_ngcontent-fut-c4] label[_ngcontent-fut-c4] input[_ngcontent-fut-c4] {
+    vertical-align: middle !important;
+}

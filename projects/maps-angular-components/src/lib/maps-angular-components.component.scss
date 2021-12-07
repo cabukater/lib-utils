@@ -1,0 +1,488 @@
+@import "~bootstrap/scss/bootstrap";
+//@import "~@fortawesome/fontawesome-free/css/all.css";
+//s@import "~ngx-toastr/toastr-bs4-alert";
+@import "./assets/colors.scss";
+@import "./../node_modules/@ng-select/ng-select/themes/default.theme.css";
+@import url("https://fonts.googleapis.com/css?family=Overpass:300,700&display=swap");
+
+
+@font-face {
+  font-family: "roboto-light";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"), url("assets/fonts/roboto-300.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/roboto-300.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/roboto-300.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url("assets/fonts/roboto-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/roboto-regular.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/roboto-regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+/* roboto-500 - latin */
+@font-face {
+  font-family: "roboto-medium";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url("assets/fonts/roboto-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/roboto-500.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/roboto-500.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+/* roboto-700 - latin */
+@font-face {
+  font-family: "roboto-bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url("assets/fonts/roboto-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/roboto-700.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/roboto-700.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+/* roboto-900 - latin */
+@font-face {
+  font-family: "roboto-black";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Roboto Black"), local("Roboto-Black"), url("assets/fonts/roboto-900.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/roboto-900.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/roboto-900.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+//theme
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+//ADJUST THEME (correções do Bootstrap)
+
+.form-control {
+  max-height: 30px;
+  border-radius: 0;
+  font-size: 13px;
+}
+
+select {
+  &.form-control {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+  }
+}
+.label-control {
+  font-family: "roboto-light";
+  font-size: 13px;
+}
+
+.btn {
+  max-height: 30px;
+  line-height: 30px;
+  border-radius: 0;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+//@at-root
+app-home {
+  width: 100%;
+}
+
+.title-secondary {
+  font-size: 14px;
+  font-family: "roboto-light";
+  font-weight: 400 !important;
+  height: 22px;
+
+  line-height: 31px;
+}
+
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.75 !important;
+}
+
+//toggle btn
+
+.toggle-box {
+  width: 110px;
+  border: none;
+  font-size: 12px;
+  p {
+    //  width:65px;
+    float: left;
+    position: relative;
+    top: 8px;
+    left: 5px;
+  }
+
+  /* The switch - the box around the slider */
+  .switch {
+    position: absolute;
+    display: inline-block;
+    width: 64px;
+    height: 26px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &::before {
+      content: "NÃO";
+    }
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $gray;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider {
+    &::before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: $light;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    &::after {
+      content: "NÃO";
+      color: #fff;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-weight: 600;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: $color-system;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px $color-system;
+    position: absolute;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
+  }
+
+  input:checked + .slider:after {
+    content: "SIM";
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-weight: 600;
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+/*DATEPICKER*/
+.datepicker-input {
+  background-color: transparent;
+  &::after {
+    // "\f073";
+    content: "teste";
+    position: absolute;
+    color: $color-system;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.prepend-mini-height {
+  height: 31px;
+}
+
+.title-secondary {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card {
+  border-radius: 0 !important;
+}
+
+.modal-body .table-results,
+.table-results {
+  & tr.title {
+    & th {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  & tr.subtitle {
+    & th {
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+}
+
+.btn-top {
+  width: 33px;
+}
+
+.small-action {
+  border: 0 !important;
+}
+
+.datepicker-prep {
+  width: 35px;
+  padding: 0;
+  & .input-group-text {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.combo-button {
+  position: absolute;
+  right: 0;
+}
+
+.input-ok {
+  border-left: 3px solid green;
+}
+
+
+.alert p {
+  font-size: 13px;
+}
+//COLOCAR EM COLOR SCSS
+.swal2-confirm,
+.btn-action {
+  background-color: $color-system !important;
+  color: $light !important;
+  max-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+  border-radius: 0 !important;
+  &:hover {
+    background-color: $light;
+    border: 1px solid;
+    border-color: $color-system;
+    color: $color-system;
+  }
+  &.swal2-styled{
+    padding: 0px !important;
+    width: 120px;
+  }
+}
+
+
+
+.swal2-cancel,
+.btn-cancel {
+  background-color: $gray !important;
+  color: $light !important;
+  max-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+  border-radius: 0 !important;
+  &:hover {
+    background-color: $light;
+    border: 1px solid;
+    border-color: $color-system;
+    color: $color-system;
+  }
+  &.swal2-styled{
+    padding: 0px !important;
+    width: 120px;
+  }
+}
+
+
+
+
+.btn-third {
+  background-color: $color-third;
+  color: $light;
+  &:hover {
+    background-color: $light;
+    border: 1px solid;
+    border-color: $color-third;
+    color: $color-third;
+  }
+}
+//BTN-DATEPICKER
+
+.btn-datepicker{
+  height: 29px;
+  top: 0px;
+  position: absolute;
+  right: 0px;
+
+}
+
+
+//menu
+
+main {
+  display: block;
+
+  &.open-menu {
+    width: 100%;
+  }
+
+  &.close-menu {
+    width: 100%;
+  }
+}
+
+app-filter-bar {
+  width: 100%;
+  display: block;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  margin: 20px 15px 0px 15px;
+}
+
+.form-control:focus,
+input[type=text][_ngcontent-npx-c4]:focus,
+input:focus,
+*:focus{
+  outline: 0,5px solid $color-system !important;
+  border-color: $color-system !important;
+  box-shadow: none !important
+}
+/*TEXTOS*/
+.text-big {
+  font-size: 26px;
+  font-family: "roboto-light";
+}
+
+.title {
+  font-size: 14px;
+  font-family: "roboto-bold";
+}
+
+
+.text-thin {
+  font-family: "roboto-light";
+  font-weight: 300;
+}
+
+.text-bold {
+
+  font-family: "roboto-bold";
+  font-weight: 300;
+}
+
+
+
+
+app-chat {
+  position: absolute;
+  bottom: 13px;
+  width: 400px;
+  right: 10px;
+}
+
+.no-border{
+  border:0 !important;
+}
+
+
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  mix($color-system, $dark, 70%);
+  border-radius: 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:  mix($color-system, $light, 70%);
+}
+
+//sidebar e contreudo considerar o header
+
+.adjust-height {
+  min-height: calc(100vh - 65px) !important;
+}
+
+
+
+
+//EERORS
+
+
+.error-msg {
+  font-size: 10px;
+ padding: 2px 10px;
+ 
+}
+
+
+
+///tirar flecha do tipo number 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+ul.nav.nav-tabs{
+  .nav-link{
+    border-radius: 0;
+  }
+
+}
+
+.page-item:first-child .page-link{
+  border-radius: 0 !important;
+}
+  

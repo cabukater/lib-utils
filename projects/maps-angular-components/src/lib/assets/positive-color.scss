@@ -1,0 +1,82 @@
+/**/
+@import "./colors.scss";
+
+
+@import "./positions.scss";
+.positive {
+  .title {
+    color: $title-positive;
+  }
+
+  .title-main {
+    color: $color-system;
+  }
+
+  .title-secondary {
+    color: $dark;
+  }
+
+  nav {
+    background-color: $header-positive;
+  }
+
+  .stage {
+    background-color: $bg-positive;
+  }
+
+  .footer{
+    background-color:  $footer-positive;
+    background-color: $text-positive;
+  }
+
+  .nav-tabs {
+    .nav-link {
+      background-color: $light;
+      border: 1x solid $gray;
+      color: $gray;
+      border-bottom: 5px solid $gray;
+
+      &.active {
+        color: $color-system;
+        border-bottom: 5px solid $color-system;
+      }
+    }
+  }
+}
+
+//Datepicker
+.bs-datepicker.positive.ng-star-inserted {
+  background-color: $bg-positive !important;
+  .bs-datepicker-body {
+
+    border: 1px solid $bg-positive-secondary !important;
+  }
+  .bs-datepicker-body table td:not(.disabled):not(.week) span:not(.disabled):not(.is-other-month) {
+    color: $text-positive;
+  }
+  th.ng-star-inserted {
+    color: $text-positive !important ;
+    font-weight: 600 !important;
+  }
+
+  .bs-datepicker-head {
+    background-color: $color-system;
+  }
+  .bs-datepicker-body table td.is-highlighted:not(.disabled):not(.selected) span,
+  .bs-datepicker-body table td span.is-highlighted:not(.disabled):not(.selected) {
+    background-color: $color-system;
+    color: $light !important;
+    border-radius: 0 !important;
+  }span.selected{
+    background-color: $color-system;
+    color: $light !important;
+    border-radius: 0 !important;
+  }
+  th.ng-star-inserted:first-child,
+  th.ng-star-inserted:last-child {
+    color: mix($gray, $light, 95%) !important;
+  }
+  .bs-datepicker-body table td span.is-other-month,
+  .bs-datepicker-body table td.is-other-month span{
+   color: mix($bg-positive, $dark, 90%) !important;
+}}

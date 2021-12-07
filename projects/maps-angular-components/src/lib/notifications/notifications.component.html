@@ -1,0 +1,27 @@
+<div  [ngClass]="theme"  (mouseleave)="showNote = false">
+  <button
+    class="nav-link"
+    type="button"
+    [ngClass]="theme"
+    (click)="openNote()"
+    href="#"
+    tooltip="Avisos do sistema"
+    placement="right"
+  >
+    <i class="fas fa-bell"></i>
+    <span class="bullet-notify">{{ total }}</span>
+  </button>
+  <ul
+    class="notify-system"
+    *ngIf="showNote"
+    [ngClass]="theme"
+   
+  >
+    <li *ngFor="let item of items; let i = index" [class]="item.tipo">
+      <p>
+        <i class="bullet mr-3 ml-2 mt-3"></i>
+        <span class="title-notify">{{ item.descricao }}</span>
+      </p>
+    </li>
+  </ul>
+</div>

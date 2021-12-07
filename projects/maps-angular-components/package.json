@@ -1,0 +1,22 @@
+{
+  "name": "shared-angular-components",
+  "version": "4.1.0",
+  "publishConfig": {
+    "registry": "http://mirror.services.shared.intranet/repository/npm-shared/"
+  },
+  "peerDependencies": {
+    "@angular/common": "^~11.1.1",
+    "@angular/core": "^~11.1.1",
+    "add": "^2.0.6",
+    "or": "^0.2.0",    
+    "yarn": "^1.22.10"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@angular-devkit/build-angular": "^0.1101.1"
+  }
+}

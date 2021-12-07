@@ -1,0 +1,220 @@
+/* Fixed sidenav, full height */
+
+.sidenav {
+    left: 0;
+    overflow-x: hidden;
+    height: calc( 100vh - 65px) !important;
+    overflow-y: auto;
+    top: 65px;
+    z-index: 99;
+    float: left;
+    display: inline-block;
+    position: relative;
+  
+    & ul.main-menu {
+          padding-bottom: 10% !important;
+      position: fixed;
+  
+    }
+    & .main-menu {
+    
+        position: absolute;
+        height: 90vh;
+        overflow-y: scroll;
+        & li {
+  
+          position: relative;
+          width: 200px;
+          overflow-x: hidden;
+  
+          & span{
+            overflow: hidden;
+    
+            width: 120px;
+            font-size: 13px;
+            position: relative;
+            top: 6px;
+          }
+         }
+      }
+  
+    &.open-menu {
+      width: 200px;
+      & li {
+         & span{
+           display: inline-block;
+         }
+  
+        }
+    }
+    &.close-menu {
+      width: 60px;
+      position: sticky;
+      & .main-menu {
+         position: absolute;
+        & li {
+            position: relative;
+          width: 200px;
+           & span{
+             display: none;
+           }
+  
+          }
+         }
+    
+      &:hover{
+        width: 200px;
+        & .main-menu {
+  
+        & li {
+        & span{
+          display: inline-block;
+        }
+      }
+      }
+    }
+  
+    }
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a,
+  .dropdown-btn {
+    padding: 6px 8px 6px 10px;
+    text-decoration: none;
+    font-size: 13px;
+   display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    & i {
+      width: 18px;
+      text-align: center;
+      margin-right: 3px;
+      font-size: 13px;
+    }
+  }
+  .sidemenu{
+  position: relative;
+  }
+  
+  .dropdown-btn {
+    padding-left: 16px;
+    &::after {
+      content: "\f106";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-style: normal;
+      float: right;
+     position: absolute;
+      right: 34px;
+    }
+  }
+  
+  
+  
+  
+  
+  .dropdown-btn.active {
+    &::after {
+      content: "\f107";
+    }
+  
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover,
+  .dropdown-btn:hover {
+    }
+  /* Add an active class to the active dropdown button */
+  a.active,
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+   padding-left: 15px;
+    position: relative;
+    list-style: none;
+    &::before {
+  
+      position: absolute;
+      content: "";
+      float: left;
+      height: 100%;
+      width: 2px;
+  
+      z-index: 99;
+      left: 16px;
+    }
+    li {
+      position: relative;
+      a {
+        &::before {
+          position: absolute;
+          width: 5px;
+  
+          display: inline-block;
+          left: -1px;
+          content: "";
+          height: 7px;
+          top: 19px;
+          border-radius: 11px;
+          border: 3px solid transparent;
+          z-index: 99;
+        }
+  
+        &.active {
+          &::before {
+            width: 7px;
+            height: 7px;
+          }
+          &.dropdown-btn.active{
+            border-left: 0 !important;
+          }
+        }
+      }
+    }
+    .dropdown-container {
+      border-left: 0;
+  
+      &.dropdown-btn {
+       
+        &::after {
+             right: 54px;
+        }
+  
+      }
+  
+    }
+  
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  a {
+  
+  }
+  
+  /*ADJUSTS*/
+  
+  
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  a {
+  
+  }
+  
+  /*ADJUSTS*/
+  
+  

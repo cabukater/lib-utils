@@ -1,0 +1,23 @@
+<div class="form-group" [ngClass]="theme" [formGroup]="group">
+  <label [for]="nameControl" class="control-label">{{ nameField }}</label>
+  <div (mouseleave)="showDropDown = false">
+    <button class="drop-toggle btn flat" (click)="showDropDown = !showDropDown">
+      <span *ngIf="checkedList.length === 0">{{ select }}</span>
+      <span *ngFor="let item of checkedList" class="badge">{{ item }}</span>
+      <i class="fa fa-angle-down"></i>
+    </button>
+    <div class="drop-show" *ngIf="showDropDown">
+        
+      <label *ngFor="let a of list" class="row-lines">
+        <input
+          type="checkbox"
+          class="input-check"
+          [(ngModel)]="a.checked"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="getSelectedValue(a.checked, a.name)"
+        />
+        <span>{{ a.name }}</span>
+      </label>
+    </div>
+  </div>
+</div>
